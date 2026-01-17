@@ -1,0 +1,18 @@
+# file: .htaccess
+# Subfolder-independent rewrite for SINGLE entry file: main_entry.php
+# Keep this .htaccess in the SAME folder as main_entry.php.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If user opens the folder URL (e.g. /gst_work/), run main_entry.php
+    RewriteRule ^$ main_entry.php [QSA,L]
+
+    # Do not rewrite existing files/directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Everything else routes to main_entry.php (clean URLs)
+    RewriteRule ^ main_entry.php [QSA,L]
+</IfModule>
