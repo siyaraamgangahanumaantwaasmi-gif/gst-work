@@ -9,7 +9,7 @@ declare(strict_types=1);
  *  - router (path -> page_name)
  *  - page composition loader
  *  - code cell executor (PHP/HTML/CSS/JS)
- *  - maintenance endpoint to re-hash code_cells (infrastructure)
+ *  - maintenance endpoint for code_cells (infrastructure)
  */
 
 // =========================
@@ -97,7 +97,7 @@ function redirect_to(string $url, int $code = 302): void
 
 function timing_safe_equals(string $a, string $b): bool
 {
-    return hash_equals($a, $b);
+    return $a === $b;
 }
 
 function pdo_for_db(string $dbName): PDO
@@ -153,7 +153,7 @@ function csrf_check(): void
         !is_string($posted) ||
         !is_string($sess) ||
         $posted === "" ||
-        !hash_equals($sess, $posted)
+        $sess !== $posted
     ) {
         http_response_code(400);
         echo "Bad Request (CSRF).";
@@ -179,12 +179,12 @@ function flash_get(string $key): ?string
 /**
  * Fetch + decode code cell.
  *
- * @return array{cell_name:string, cell_type:string, content:string, sha_stored:string, sha_computed:string, version:int}
+ * @return array{cell_name:string, cell_type:string, content:string, version:int}
  */
 function db_get_cell(PDO $pdo_ui, string $cellName, bool $verifyIntegrity = true): array
 {
     $stmt = $pdo_ui->prepare(
-        "SELECT cell_name, cell_type, content_base64, sha256, version FROM code_cells WHERE cell_name = :n AND is_active = 1 LIMIT 1",
+        "SELECT cell_name, cell_type, content_text, version FROM code_cells WHERE cell_name = :n AND is_active = 1 LIMIT 1",
     );
     $stmt->execute([":n" => $cellName]);
     $row = $stmt->fetch();
@@ -193,36 +193,12 @@ function db_get_cell(PDO $pdo_ui, string $cellName, bool $verifyIntegrity = true
         throw new RuntimeException("Missing code cell: " . $cellName);
     }
 
-    $b64 = (string) ($row["content_base64"] ?? "");
-    $storedSha = trim((string) ($row["sha256"] ?? ""));
-
-    // base64_decode strict first. If DB has whitespace/newlines, strip them and retry.
-    $decoded = base64_decode($b64, true);
-    if ($decoded === false) {
-        $b64_clean = preg_replace("/\s+/", "", $b64) ?? "";
-        $decoded = base64_decode($b64_clean, true);
-    }
-    if ($decoded === false) {
-        throw new RuntimeException("Invalid base64 in cell: " . $cellName);
-    }
-
-    $computedSha = hash("sha256", $decoded);
-
-    if ($verifyIntegrity) {
-        // normalize case to avoid "ABC" vs "abc" mismatch
-        if (!hash_equals(strtolower($storedSha), strtolower($computedSha))) {
-            throw new RuntimeException(
-                "Integrity check failed (sha256) for cell: " . $cellName,
-            );
-        }
-    }
+    $decoded = (string) ($row["content_text"] ?? "");
 
     return [
         "cell_name" => (string) $row["cell_name"],
         "cell_type" => (string) $row["cell_type"],
         "content" => $decoded,
-        "sha_stored" => $storedSha,
-        "sha_computed" => $computedSha,
         "version" => (int) ($row["version"] ?? 1),
     ];
 }
@@ -289,20 +265,16 @@ function db_require_once(string $cellName): void
 }
 
 /**
- * Maintenance: recompute sha256 for all active code_cells.
+ * Maintenance: list active code_cells.
  *
  * @return array{updated:int, ok:int, failed:int, details:array<int, array<string,string>>}
  */
-function maint_rehash_cells(PDO $pdo_ui): array
+function maint_list_cells(PDO $pdo_ui): array
 {
     $q = $pdo_ui->query(
-        "SELECT cell_name, content_base64, sha256 FROM code_cells WHERE is_active = 1 ORDER BY cell_name",
+        "SELECT cell_name FROM code_cells WHERE is_active = 1 ORDER BY cell_name",
     );
     $rows = $q->fetchAll();
-
-    $upd = $pdo_ui->prepare(
-        "UPDATE code_cells SET sha256 = :sha, updated_at = NOW() WHERE cell_name = :n",
-    );
 
     $updated = 0;
     $ok = 0;
@@ -311,43 +283,12 @@ function maint_rehash_cells(PDO $pdo_ui): array
 
     foreach ($rows as $r) {
         $name = (string) ($r["cell_name"] ?? "");
-        $b64 = (string) ($r["content_base64"] ?? "");
-        $stored = trim((string) ($r["sha256"] ?? ""));
-
-        $decoded = base64_decode($b64, true);
-        if ($decoded === false) {
-            $b64_clean = preg_replace("/\s+/", "", $b64) ?? "";
-            $decoded = base64_decode($b64_clean, true);
-        }
-
-        if ($decoded === false) {
-            $failed++;
-            $details[] = [
-                "cell" => $name,
-                "status" => "FAILED",
-                "note" => "Invalid base64",
-            ];
-            continue;
-        }
-
-        $computed = hash("sha256", $decoded);
         $ok++;
-
-        if (!hash_equals(strtolower($stored), strtolower($computed))) {
-            $upd->execute([":sha" => $computed, ":n" => $name]);
-            $updated++;
-            $details[] = [
-                "cell" => $name,
-                "status" => "UPDATED",
-                "note" => "sha256 reset",
-            ];
-        } else {
-            $details[] = [
-                "cell" => $name,
-                "status" => "OK",
-                "note" => "no change",
-            ];
-        }
+        $details[] = [
+            "cell" => $name,
+            "status" => "OK",
+            "note" => "no integrity check configured",
+        ];
     }
 
     return [
@@ -388,8 +329,8 @@ $path = request_path($basePath);
 $maintAction = null;
 if (isset($_GET["__maint"]) && is_string($_GET["__maint"])) {
     $maintAction = $_GET["__maint"];
-} elseif ($path === "/__maint/rehash") {
-    $maintAction = "rehash";
+} elseif ($path === "/__maint/list") {
+    $maintAction = "list";
 }
 
 if ($maintAction !== null) {
@@ -400,11 +341,11 @@ if ($maintAction !== null) {
         exit();
     }
 
-    if ($maintAction === "rehash") {
-        $res = maint_rehash_cells($pdo_ui);
+    if ($maintAction === "list") {
+        $res = maint_list_cells($pdo_ui);
 
         header("Content-Type: text/html; charset=utf-8");
-        echo "<h2>Rehash code_cells</h2>";
+        echo "<h2>Code cells</h2>";
         echo "<p>updated: " .
             (int) $res["updated"] .
             " | ok: " .

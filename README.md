@@ -7,3 +7,4 @@ This repository contains a database-driven GST operations slice. The public entr
 1. Import the SQL files in `sql/` (UI, master, txn, and `05_app_files_bundle.sql`).
 2. Point your Apache document root to `public/` and ensure `public/.htaccess` is enabled.
 3. Visit the app to trigger extraction of the bundled app files.
+4. Log in with the default credentials: `admin` / `admin123`.

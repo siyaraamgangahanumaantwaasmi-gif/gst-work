@@ -1,11 +1,537 @@
 -- App files bundle
 CREATE TABLE IF NOT EXISTS app_files (
   file_path VARCHAR(255) PRIMARY KEY,
-  content_base64 LONGTEXT NOT NULL,
-  sha256 CHAR(64) NOT NULL,
+  content_text LONGTEXT NOT NULL,
   updated_at DATETIME NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-REPLACE INTO app_files (file_path, content_base64, sha256, updated_at) VALUES
-('app/bootstrap.php', 'PD9waHAKZGVjbGFyZShzdHJpY3RfdHlwZXM9MSk7CgovKgogKiBBcHAgYm9vdHN0cmFwIGV4dHJhY3RlZCBmcm9tIERCIGJ1bmRsZS4KICogUmVzcG9uc2liaWxpdGllczoKICogIC0gc2Vzc2lvbiBpbml0IChpZiBuZWVkZWQpCiAqICAtIFBETyBjb25uZWN0aW9ucyB0byAzIGRhdGFiYXNlcwogKiAgLSByb3V0ZXIgKHBhdGggLT4gcGFnZV9uYW1lKQogKiAgLSBwYWdlIGNvbXBvc2l0aW9uIGxvYWRlcgogKiAgLSBjb2RlIGNlbGwgZXhlY3V0b3IgKFBIUC9IVE1ML0NTUy9KUykKICogIC0gbWFpbnRlbmFuY2UgZW5kcG9pbnQgdG8gcmUtaGFzaCBjb2RlX2NlbGxzIChpbmZyYXN0cnVjdHVyZSkKICovCgovLyA9PT09PT09PT09PT09PT09PT09PT09PT09Ci8vIFJ1bnRpbWUgc2V0dGluZ3MKLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQppZiAoQVBQX0RFQlVHKSB7CiAgICBpbmlfc2V0KCJkaXNwbGF5X2Vycm9ycyIsICIxIik7CiAgICBpbmlfc2V0KCJkaXNwbGF5X3N0YXJ0dXBfZXJyb3JzIiwgIjEiKTsKICAgIGVycm9yX3JlcG9ydGluZyhFX0FMTCk7Cn0gZWxzZSB7CiAgICBpbmlfc2V0KCJkaXNwbGF5X2Vycm9ycyIsICIwIik7CiAgICBlcnJvcl9yZXBvcnRpbmcoRV9BTEwpOwp9CgpoZWFkZXIoIlgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYiKTsKCmlmIChzZXNzaW9uX3N0YXR1cygpICE9PSBQSFBfU0VTU0lPTl9BQ1RJVkUpIHsKICAgIC8vIFNhZmUgZGVmYXVsdHMgZm9yIHN1YmZvbGRlciBhcHBzCiAgICBpbmlfc2V0KCJzZXNzaW9uLnVzZV9zdHJpY3RfbW9kZSIsICIxIik7CiAgICBzZXNzaW9uX3N0YXJ0KCk7Cn0KCi8vID09PT09PT09PT09PT09PT09PT09PT09PT0KLy8gSGVscGVycwovLyA9PT09PT09PT09PT09PT09PT09PT09PT09CmZ1bmN0aW9uIGgoP3N0cmluZyAkcyk6IHN0cmluZwp7CiAgICByZXR1cm4gaHRtbHNwZWNpYWxjaGFycygoc3RyaW5nKSAkcywgRU5UX1FVT1RFUyB8IEVOVF9TVUJTVElUVVRFLCAiVVRGLTgiKTsKfQoKLyoqIEByZXR1cm4gYXJyYXk8aW50LCBtaXhlZD4gKi8KZnVuY3Rpb24ganNvbl9hcnJheShzdHJpbmcgJGpzb24pOiBhcnJheQp7CiAgICAkanNvbiA9IHRyaW0oJGpzb24pOwogICAgaWYgKCRqc29uID09PSAiIikgewogICAgICAgIHJldHVybiBbXTsKICAgIH0KICAgICRkZWNvZGVkID0ganNvbl9kZWNvZGUoJGpzb24sIHRydWUpOwogICAgaWYgKCFpc19hcnJheSgkZGVjb2RlZCkpIHsKICAgICAgICByZXR1cm4gW107CiAgICB9CiAgICByZXR1cm4gJGRlY29kZWQ7Cn0KCmZ1bmN0aW9uIGJhc2VfcGF0aCgpOiBzdHJpbmcKewogICAgLy8gU0NSSVBUX05BTUUgdXN1YWxseTogL2dzdF93b3JrL21haW5fZW50cnkucGhwCiAgICAkc2NyaXB0ID0gJF9TRVJWRVJbIlNDUklQVF9OQU1FIl0gPz8gIiI7CiAgICAkZGlyID0gcnRyaW0oc3RyX3JlcGxhY2UoIlxcIiwgIi8iLCBkaXJuYW1lKCRzY3JpcHQpKSwgIi8iKTsKICAgIGlmICgkZGlyID09PSAiIiB8fCAkZGlyID09PSAiLiIpIHsKICAgICAgICByZXR1cm4gIiI7CiAgICB9CiAgICBpZiAoJGRpciA9PT0gIi8iKSB7CiAgICAgICAgcmV0dXJuICIiOwogICAgfQogICAgcmV0dXJuICRkaXI7Cn0KCmZ1bmN0aW9uIHJlcXVlc3RfcGF0aChzdHJpbmcgJGJhc2VQYXRoKTogc3RyaW5nCnsKICAgICR1cmkgPSAkX1NFUlZFUlsiUkVRVUVTVF9VUkkiXSA/PyAiLyI7CiAgICAkcGF0aCA9IHBhcnNlX3VybCgkdXJpLCBQSFBfVVJMX1BBVEgpOwogICAgaWYgKCFpc19zdHJpbmcoJHBhdGgpKSB7CiAgICAgICAgJHBhdGggPSAiLyI7CiAgICB9CgogICAgaWYgKCRiYXNlUGF0aCAhPT0gIiIgJiYgc3RyX3N0YXJ0c193aXRoKCRwYXRoLCAkYmFzZVBhdGgpKSB7CiAgICAgICAgJHBhdGggPSBzdWJzdHIoJHBhdGgsIHN0cmxlbigkYmFzZVBhdGgpKTsKICAgICAgICBpZiAoJHBhdGggPT09IGZhbHNlKSB7CiAgICAgICAgICAgICRwYXRoID0gIi8iOwogICAgICAgIH0KICAgIH0KCiAgICAkcGF0aCA9ICIvIiAuIGx0cmltKCRwYXRoLCAiLyIpOwogICAgLy8gTm9ybWFsaXplOiBjb2xsYXBzZSBtdWx0aXBsZSBzbGFzaGVzCiAgICAkcGF0aCA9IHByZWdfcmVwbGFjZSgiIy8rIyIsICIvIiwgJHBhdGgpID8/ICRwYXRoOwogICAgcmV0dXJuICRwYXRoOwp9CgpmdW5jdGlvbiByZWRpcmVjdF90byhzdHJpbmcgJHVybCwgaW50ICRjb2RlID0gMzAyKTogdm9pZAp7CiAgICBoZWFkZXIoIkxvY2F0aW9uOiAiIC4gJHVybCwgdHJ1ZSwgJGNvZGUpOwogICAgZXhpdCgpOwp9CgpmdW5jdGlvbiB0aW1pbmdfc2FmZV9lcXVhbHMoc3RyaW5nICRhLCBzdHJpbmcgJGIpOiBib29sCnsKICAgIHJldHVybiBoYXNoX2VxdWFscygkYSwgJGIpOwp9CgpmdW5jdGlvbiBwZG9fZm9yX2RiKHN0cmluZyAkZGJOYW1lKTogUERPCnsKICAgICRjaGFyc2V0ID0gInV0ZjhtYjQiOwoKICAgICRkc24gPSAiIjsKICAgIGlmIChEQl9TT0NLRVQgIT09ICIiICYmIEBpc19maWxlKERCX1NPQ0tFVCkpIHsKICAgICAgICAkZHNuID0KICAgICAgICAgICAgIm15c3FsOnVuaXhfc29ja2V0PSIgLiBEQl9TT0NLRVQgLiAiO2RibmFtZT0iIC4gJGRiTmFtZSAuICI7Y2hhcnNldD0iIC4gJGNoYXJzZXQ7CiAgICB9IGVsc2UgewogICAgICAgICRkc24gPQogICAgICAgICAgICAibXlzcWw6aG9zdD0iIC4KICAgICAgICAgICAgREJfSE9TVCAuCiAgICAgICAgICAgICI7cG9ydD0iIC4KICAgICAgICAgICAgKHN0cmluZykgREJfUE9SVCAuCiAgICAgICAgICAgICI7ZGJuYW1lPSIgLgogICAgICAgICAgICAkZGJOYW1lIC4KICAgICAgICAgICAgIjtjaGFyc2V0PSIgLgogICAgICAgICAgICAkY2hhcnNldDsKICAgIH0KCiAgICAkcGRvID0gbmV3IFBETygkZHNuLCBEQl9VU0VSLCBEQl9QQVNTLCBbCiAgICAgICAgUERPOjpBVFRSX0VSUk1PREUgPT4gUERPOjpFUlJNT0RFX0VYQ0VQVElPTiwKICAgICAgICBQRE86OkFUVFJfREVGQVVMVF9GRVRDSF9NT0RFID0+IFBETzo6RkVUQ0hfQVNTT0MsCiAgICAgICAgUERPOjpBVFRSX0VNVUxBVEVfUFJFUEFSRVMgPT4gZmFsc2UsCiAgICBdKTsKCiAgICByZXR1cm4gJHBkbzsKfQoKZnVuY3Rpb24gY3NyZl90b2tlbigpOiBzdHJpbmcKewogICAgaWYgKGVtcHR5KCRfU0VTU0lPTlsiX2NzcmZfdG9rZW4iXSkgfHwgIWlzX3N0cmluZygkX1NFU1NJT05bIl9jc3JmX3Rva2VuIl0pKSB7CiAgICAgICAgJF9TRVNTSU9OWyJfY3NyZl90b2tlbiJdID0gYmluMmhleChyYW5kb21fYnl0ZXMoMzIpKTsKICAgIH0KICAgIHJldHVybiAoc3RyaW5nKSAkX1NFU1NJT05bIl9jc3JmX3Rva2VuIl07Cn0KCmZ1bmN0aW9uIGNzcmZfZmllbGQoKTogc3RyaW5nCnsKICAgIHJldHVybiAnPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY3NyZl90b2tlbiIgdmFsdWU9IicgLiBoKGNzcmZfdG9rZW4oKSkgLiAnIj4nOwp9CgpmdW5jdGlvbiBjc3JmX2NoZWNrKCk6IHZvaWQKewogICAgaWYgKCgkX1NFUlZFUlsiUkVRVUVTVF9NRVRIT0QiXSA/PyAiR0VUIikgIT09ICJQT1NUIikgewogICAgICAgIHJldHVybjsKICAgIH0KICAgICRwb3N0ZWQgPSAkX1BPU1RbImNzcmZfdG9rZW4iXSA/PyAiIjsKICAgICRzZXNzID0gJF9TRVNTSU9OWyJfY3NyZl90b2tlbiJdID8/ICIiOwogICAgaWYgKAogICAgICAgICFpc19zdHJpbmcoJHBvc3RlZCkgfHwKICAgICAgICAhaXNfc3RyaW5nKCRzZXNzKSB8fAogICAgICAgICRwb3N0ZWQgPT09ICIiIHx8CiAgICAgICAgIWhhc2hfZXF1YWxzKCRzZXNzLCAkcG9zdGVkKQogICAgKSB7CiAgICAgICAgaHR0cF9yZXNwb25zZV9jb2RlKDQwMCk7CiAgICAgICAgZWNobyAiQmFkIFJlcXVlc3QgKENTUkYpLiI7CiAgICAgICAgZXhpdCgpOwogICAgfQp9CgpmdW5jdGlvbiBmbGFzaF9zZXQoc3RyaW5nICRrZXksIHN0cmluZyAkbXNnKTogdm9pZAp7CiAgICAkX1NFU1NJT05bIl9mbGFzaCJdWyRrZXldID0gJG1zZzsKfQoKZnVuY3Rpb24gZmxhc2hfZ2V0KHN0cmluZyAka2V5KTogP3N0cmluZwp7CiAgICBpZiAoIWlzc2V0KCRfU0VTU0lPTlsiX2ZsYXNoIl1bJGtleV0pKSB7CiAgICAgICAgcmV0dXJuIG51bGw7CiAgICB9CiAgICAkbXNnID0gJF9TRVNTSU9OWyJfZmxhc2giXVska2V5XTsKICAgIHVuc2V0KCRfU0VTU0lPTlsiX2ZsYXNoIl1bJGtleV0pOwogICAgcmV0dXJuIGlzX3N0cmluZygkbXNnKSA/ICRtc2cgOiBudWxsOwp9CgovKioKICogRmV0Y2ggKyBkZWNvZGUgY29kZSBjZWxsLgogKgogKiBAcmV0dXJuIGFycmF5e2NlbGxfbmFtZTpzdHJpbmcsIGNlbGxfdHlwZTpzdHJpbmcsIGNvbnRlbnQ6c3RyaW5nLCBzaGFfc3RvcmVkOnN0cmluZywgc2hhX2NvbXB1dGVkOnN0cmluZywgdmVyc2lvbjppbnR9CiAqLwpmdW5jdGlvbiBkYl9nZXRfY2VsbChQRE8gJHBkb191aSwgc3RyaW5nICRjZWxsTmFtZSwgYm9vbCAkdmVyaWZ5SW50ZWdyaXR5ID0gdHJ1ZSk6IGFycmF5CnsKICAgICRzdG10ID0gJHBkb191aS0+cHJlcGFyZSgKICAgICAgICAiU0VMRUNUIGNlbGxfbmFtZSwgY2VsbF90eXBlLCBjb250ZW50X2Jhc2U2NCwgc2hhMjU2LCB2ZXJzaW9uIEZST00gY29kZV9jZWxscyBXSEVSRSBjZWxsX25hbWUgPSA6biBBTkQgaXNfYWN0aXZlID0gMSBMSU1JVCAxIiwKICAgICk7CiAgICAkc3RtdC0+ZXhlY3V0ZShbIjpuIiA9PiAkY2VsbE5hbWVdKTsKICAgICRyb3cgPSAkc3RtdC0+ZmV0Y2goKTsKCiAgICBpZiAoISRyb3cpIHsKICAgICAgICB0aHJvdyBuZXcgUnVudGltZUV4Y2VwdGlvbigiTWlzc2luZyBjb2RlIGNlbGw6ICIgLiAkY2VsbE5hbWUpOwogICAgfQoKICAgICRiNjQgPSAoc3RyaW5nKSAoJHJvd1siY29udGVudF9iYXNlNjQiXSA/PyAiIik7CiAgICAkc3RvcmVkU2hhID0gdHJpbSgoc3RyaW5nKSAoJHJvd1sic2hhMjU2Il0gPz8gIiIpKTsKCiAgICAvLyBiYXNlNjRfZGVjb2RlIHN0cmljdCBmaXJzdC4gSWYgREIgaGFzIHdoaXRlc3BhY2UvbmV3bGluZXMsIHN0cmlwIHRoZW0gYW5kIHJldHJ5LgogICAgJGRlY29kZWQgPSBiYXNlNjRfZGVjb2RlKCRiNjQsIHRydWUpOwogICAgaWYgKCRkZWNvZGVkID09PSBmYWxzZSkgewogICAgICAgICRiNjRfY2xlYW4gPSBwcmVnX3JlcGxhY2UoIi9ccysvIiwgIiIsICRiNjQpID8/ICIiOwogICAgICAgICRkZWNvZGVkID0gYmFzZTY0X2RlY29kZSgkYjY0X2NsZWFuLCB0cnVlKTsKICAgIH0KICAgIGlmICgkZGVjb2RlZCA9PT0gZmFsc2UpIHsKICAgICAgICB0aHJvdyBuZXcgUnVudGltZUV4Y2VwdGlvbigiSW52YWxpZCBiYXNlNjQgaW4gY2VsbDogIiAuICRjZWxsTmFtZSk7CiAgICB9CgogICAgJGNvbXB1dGVkU2hhID0gaGFzaCgic2hhMjU2IiwgJGRlY29kZWQpOwoKICAgIGlmICgkdmVyaWZ5SW50ZWdyaXR5KSB7CiAgICAgICAgLy8gbm9ybWFsaXplIGNhc2UgdG8gYXZvaWQgIkFCQyIgdnMgImFiYyIgbWlzbWF0Y2gKICAgICAgICBpZiAoIWhhc2hfZXF1YWxzKHN0cnRvbG93ZXIoJHN0b3JlZFNoYSksIHN0cnRvbG93ZXIoJGNvbXB1dGVkU2hhKSkpIHsKICAgICAgICAgICAgdGhyb3cgbmV3IFJ1bnRpbWVFeGNlcHRpb24oCiAgICAgICAgICAgICAgICAiSW50ZWdyaXR5IGNoZWNrIGZhaWxlZCAoc2hhMjU2KSBmb3IgY2VsbDogIiAuICRjZWxsTmFtZSwKICAgICAgICAgICAgKTsKICAgICAgICB9CiAgICB9CgogICAgcmV0dXJuIFsKICAgICAgICAiY2VsbF9uYW1lIiA9PiAoc3RyaW5nKSAkcm93WyJjZWxsX25hbWUiXSwKICAgICAgICAiY2VsbF90eXBlIiA9PiAoc3RyaW5nKSAkcm93WyJjZWxsX3R5cGUiXSwKICAgICAgICAiY29udGVudCIgPT4gJGRlY29kZWQsCiAgICAgICAgInNoYV9zdG9yZWQiID0+ICRzdG9yZWRTaGEsCiAgICAgICAgInNoYV9jb21wdXRlZCIgPT4gJGNvbXB1dGVkU2hhLAogICAgICAgICJ2ZXJzaW9uIiA9PiAoaW50KSAoJHJvd1sidmVyc2lvbiJdID8/IDEpLAogICAgXTsKfQoKZnVuY3Rpb24gZXhlY19waHBfY2VsbChzdHJpbmcgJHBocCwgYXJyYXkgJGN0eCk6IHZvaWQKewogICAgLy8gQWxsb3cgY2VsbHMgc3RvcmVkIHdpdGggb3Igd2l0aG91dCBQSFAgdGFncwogICAgJHBocCA9IHByZWdfcmVwbGFjZSgiL15ccyo8XD9waHBccyovIiwgIiIsICRwaHApID8/ICRwaHA7CiAgICAkcGhwID0gcHJlZ19yZXBsYWNlKCcvXD8+XHMqJC8nLCAiIiwgJHBocCkgPz8gJHBocDsKCiAgICAkcnVubmVyID0gZnVuY3Rpb24gKCkgdXNlICgkcGhwLCAkY3R4KTogdm9pZCB7CiAgICAgICAgLy8gUHJvdmlkZSBjdHggaW50byBsb2NhbCBzY29wZQogICAgICAgICRDVFggPSAkY3R4OwogICAgICAgIC8vIEFuZCBhbHNvIGNvbnZlbmllbmNlIHZhcmlhYmxlcwogICAgICAgIGV4dHJhY3QoJGN0eCwgRVhUUl9TS0lQKTsKICAgICAgICBldmFsKCRwaHApOwogICAgfTsKCiAgICAkcnVubmVyKCk7Cn0KCmZ1bmN0aW9uIGV4ZWNfY2VsbChQRE8gJHBkb191aSwgYXJyYXkgJGNlbGwsIGFycmF5ICRjdHgpOiB2b2lkCnsKICAgICR0eXBlID0gc3RydG91cHBlcih0cmltKCRjZWxsWyJjZWxsX3R5cGUiXSkpOwogICAgJGNvbnRlbnQgPSAoc3RyaW5nKSAkY2VsbFsiY29udGVudCJdOwoKICAgIGlmICgkdHlwZSA9PT0gIlBIUCIpIHsKICAgICAgICBleGVjX3BocF9jZWxsKCRjb250ZW50LCAkY3R4KTsKICAgICAgICByZXR1cm47CiAgICB9CgogICAgaWYgKCR0eXBlID09PSAiSFRNTCIpIHsKICAgICAgICBlY2hvICRjb250ZW50OwogICAgICAgIHJldHVybjsKICAgIH0KCiAgICBpZiAoJHR5cGUgPT09ICJDU1MiKSB7CiAgICAgICAgZWNobyAiXG48c3R5bGU+XG4iIC4gJGNvbnRlbnQgLiAiXG48L3N0eWxlPlxuIjsKICAgICAgICByZXR1cm47CiAgICB9CgogICAgaWYgKCR0eXBlID09PSAiSlMiKSB7CiAgICAgICAgZWNobyAiXG48c2NyaXB0PlxuIiAuICRjb250ZW50IC4gIlxuPC9zY3JpcHQ+XG4iOwogICAgICAgIHJldHVybjsKICAgIH0KCiAgICB0aHJvdyBuZXcgUnVudGltZUV4Y2VwdGlvbigKICAgICAgICAiVW5zdXBwb3J0ZWQgY2VsbF90eXBlOiAiIC4gJHR5cGUgLiAiIGZvciBjZWxsICIgLiAoJGNlbGxbImNlbGxfbmFtZSJdID8/ICIiKSwKICAgICk7Cn0KCi8qKgogKiBJbXBsZW1lbnRzIGRiX3JlcXVpcmVfb25jZSgiY2VsbF9uYW1lIikgZm9yIFBIUCBjZWxscy4KICogVGhlIGxvYWRlZC1zZXQgaXMgcGVyLXJlcXVlc3QuCiAqLwpmdW5jdGlvbiBkYl9yZXF1aXJlX29uY2Uoc3RyaW5nICRjZWxsTmFtZSk6IHZvaWQKewogICAgLyoqIEB2YXIgY2FsbGFibGV8bnVsbCAkbG9hZGVyICovCiAgICAkbG9hZGVyID0gJEdMT0JBTFNbIl9fZGJfY2VsbF9sb2FkZXIiXSA/PyBudWxsOwogICAgaWYgKCFpc19jYWxsYWJsZSgkbG9hZGVyKSkgewogICAgICAgIHRocm93IG5ldyBSdW50aW1lRXhjZXB0aW9uKCJkYl9yZXF1aXJlX29uY2UoKSBpcyBub3QgYXZhaWxhYmxlIGluIHRoaXMgY29udGV4dC4iKTsKICAgIH0KICAgICRsb2FkZXIoJGNlbGxOYW1lKTsKfQoKLyoqCiAqIE1haW50ZW5hbmNlOiByZWNvbXB1dGUgc2hhMjU2IGZvciBhbGwgYWN0aXZlIGNvZGVfY2VsbHMuCiAqCiAqIEByZXR1cm4gYXJyYXl7dXBkYXRlZDppbnQsIG9rOmludCwgZmFpbGVkOmludCwgZGV0YWlsczphcnJheTxpbnQsIGFycmF5PHN0cmluZyxzdHJpbmc+Pn0KICovCmZ1bmN0aW9uIG1haW50X3JlaGFzaF9jZWxscyhQRE8gJHBkb191aSk6IGFycmF5CnsKICAgICRxID0gJHBkb191aS0+cXVlcnkoCiAgICAgICAgIlNFTEVDVCBjZWxsX25hbWUsIGNvbnRlbnRfYmFzZTY0LCBzaGEyNTYgRlJPTSBjb2RlX2NlbGxzIFdIRVJFIGlzX2FjdGl2ZSA9IDEgT1JERVIgQlkgY2VsbF9uYW1lIiwKICAgICk7CiAgICAkcm93cyA9ICRxLT5mZXRjaEFsbCgpOwoKICAgICR1cGQgPSAkcGRvX3VpLT5wcmVwYXJlKAogICAgICAgICJVUERBVEUgY29kZV9jZWxscyBTRVQgc2hhMjU2ID0gOnNoYSwgdXBkYXRlZF9hdCA9IE5PVygpIFdIRVJFIGNlbGxfbmFtZSA9IDpuIiwKICAgICk7CgogICAgJHVwZGF0ZWQgPSAwOwogICAgJG9rID0gMDsKICAgICRmYWlsZWQgPSAwOwogICAgJGRldGFpbHMgPSBbXTsKCiAgICBmb3JlYWNoICgkcm93cyBhcyAkcikgewogICAgICAgICRuYW1lID0gKHN0cmluZykgKCRyWyJjZWxsX25hbWUiXSA/PyAiIik7CiAgICAgICAgJGI2NCA9IChzdHJpbmcpICgkclsiY29udGVudF9iYXNlNjQiXSA/PyAiIik7CiAgICAgICAgJHN0b3JlZCA9IHRyaW0oKHN0cmluZykgKCRyWyJzaGEyNTYiXSA/PyAiIikpOwoKICAgICAgICAkZGVjb2RlZCA9IGJhc2U2NF9kZWNvZGUoJGI2NCwgdHJ1ZSk7CiAgICAgICAgaWYgKCRkZWNvZGVkID09PSBmYWxzZSkgewogICAgICAgICAgICAkYjY0X2NsZWFuID0gcHJlZ19yZXBsYWNlKCIvXHMrLyIsICIiLCAkYjY0KSA/PyAiIjsKICAgICAgICAgICAgJGRlY29kZWQgPSBiYXNlNjRfZGVjb2RlKCRiNjRfY2xlYW4sIHRydWUpOwogICAgICAgIH0KCiAgICAgICAgaWYgKCRkZWNvZGVkID09PSBmYWxzZSkgewogICAgICAgICAgICAkZmFpbGVkKys7CiAgICAgICAgICAgICRkZXRhaWxzW10gPSBbCiAgICAgICAgICAgICAgICAiY2VsbCIgPT4gJG5hbWUsCiAgICAgICAgICAgICAgICAic3RhdHVzIiA9PiAiRkFJTEVEIiwKICAgICAgICAgICAgICAgICJub3RlIiA9PiAiSW52YWxpZCBiYXNlNjQiLAogICAgICAgICAgICBdOwogICAgICAgICAgICBjb250aW51ZTsKICAgICAgICB9CgogICAgICAgICRjb21wdXRlZCA9IGhhc2goInNoYTI1NiIsICRkZWNvZGVkKTsKICAgICAgICAkb2srKzsKCiAgICAgICAgaWYgKCFoYXNoX2VxdWFscyhzdHJ0b2xvd2VyKCRzdG9yZWQpLCBzdHJ0b2xvd2VyKCRjb21wdXRlZCkpKSB7CiAgICAgICAgICAgICR1cGQtPmV4ZWN1dGUoWyI6c2hhIiA9PiAkY29tcHV0ZWQsICI6biIgPT4gJG5hbWVdKTsKICAgICAgICAgICAgJHVwZGF0ZWQrKzsKICAgICAgICAgICAgJGRldGFpbHNbXSA9IFsKICAgICAgICAgICAgICAgICJjZWxsIiA9PiAkbmFtZSwKICAgICAgICAgICAgICAgICJzdGF0dXMiID0+ICJVUERBVEVEIiwKICAgICAgICAgICAgICAgICJub3RlIiA9PiAic2hhMjU2IHJlc2V0IiwKICAgICAgICAgICAgXTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAkZGV0YWlsc1tdID0gWwogICAgICAgICAgICAgICAgImNlbGwiID0+ICRuYW1lLAogICAgICAgICAgICAgICAgInN0YXR1cyIgPT4gIk9LIiwKICAgICAgICAgICAgICAgICJub3RlIiA9PiAibm8gY2hhbmdlIiwKICAgICAgICAgICAgXTsKICAgICAgICB9CiAgICB9CgogICAgcmV0dXJuIFsKICAgICAgICAidXBkYXRlZCIgPT4gJHVwZGF0ZWQsCiAgICAgICAgIm9rIiA9PiAkb2ssCiAgICAgICAgImZhaWxlZCIgPT4gJGZhaWxlZCwKICAgICAgICAiZGV0YWlscyIgPT4gJGRldGFpbHMsCiAgICBdOwp9CgovLyA9PT09PT09PT09PT09PT09PT09PT09PT09Ci8vIENvbm5lY3QgREJzCi8vID09PT09PT09PT09PT09PT09PT09PT09PT0KdHJ5IHsKICAgICRwZG9fdWkgPSBwZG9fZm9yX2RiKFVJX0RCX05BTUUpOwogICAgJHBkb19tYXN0ZXIgPSBwZG9fZm9yX2RiKE1BU1RFUl9EQl9OQU1FKTsKICAgICRwZG9fdHhuID0gcGRvX2Zvcl9kYihUWE5fREJfTkFNRSk7Cn0gY2F0Y2ggKFRocm93YWJsZSAkZSkgewogICAgaHR0cF9yZXNwb25zZV9jb2RlKDUwMCk7CiAgICBpZiAoQVBQX0RFQlVHKSB7CiAgICAgICAgZWNobyAnPHByZT5EQiBjb25uZWN0aW9uIGZhaWxlZC5cbicgLgogICAgICAgICAgICBoKCRlLT5nZXRNZXNzYWdlKCkpIC4KICAgICAgICAgICAgIlxuIiAuCiAgICAgICAgICAgIGgoJGUtPmdldFRyYWNlQXNTdHJpbmcoKSkgLgogICAgICAgICAgICAiPC9wcmU+IjsKICAgIH0gZWxzZSB7CiAgICAgICAgZWNobyAiREIgY29ubmVjdGlvbiBmYWlsZWQuIjsKICAgIH0KICAgIGV4aXQoKTsKfQoKJGJhc2VQYXRoID0gYmFzZV9wYXRoKCk7CiRwYXRoID0gcmVxdWVzdF9wYXRoKCRiYXNlUGF0aCk7CgovLyA9PT09PT09PT09PT09PT09PT09PT09PT09Ci8vIE1haW50ZW5hbmNlIGVuZHBvaW50cyAocnVuIGJlZm9yZSBhbnkgY29kZSBjZWxsIGV4ZWN1dGlvbikKLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQokbWFpbnRBY3Rpb24gPSBudWxsOwppZiAoaXNzZXQoJF9HRVRbIl9fbWFpbnQiXSkgJiYgaXNfc3RyaW5nKCRfR0VUWyJfX21haW50Il0pKSB7CiAgICAkbWFpbnRBY3Rpb24gPSAkX0dFVFsiX19tYWludCJdOwp9IGVsc2VpZiAoJHBhdGggPT09ICIvX19tYWludC9yZWhhc2giKSB7CiAgICAkbWFpbnRBY3Rpb24gPSAicmVoYXNoIjsKfQoKaWYgKCRtYWludEFjdGlvbiAhPT0gbnVsbCkgewogICAgJHRva2VuID0gKHN0cmluZykgKCRfR0VUWyJ0b2tlbiJdID8/ICIiKTsKICAgIGlmICghdGltaW5nX3NhZmVfZXF1YWxzKCR0b2tlbiwgTUFJTlRfVE9LRU4pKSB7CiAgICAgICAgaHR0cF9yZXNwb25zZV9jb2RlKDQwMyk7CiAgICAgICAgZWNobyAiRm9yYmlkZGVuLiI7CiAgICAgICAgZXhpdCgpOwogICAgfQoKICAgIGlmICgkbWFpbnRBY3Rpb24gPT09ICJyZWhhc2giKSB7CiAgICAgICAgJHJlcyA9IG1haW50X3JlaGFzaF9jZWxscygkcGRvX3VpKTsKCiAgICAgICAgaGVhZGVyKCJDb250ZW50LVR5cGU6IHRleHQvaHRtbDsgY2hhcnNldD11dGYtOCIpOwogICAgICAgIGVjaG8gIjxoMj5SZWhhc2ggY29kZV9jZWxsczwvaDI+IjsKICAgICAgICBlY2hvICI8cD51cGRhdGVkOiAiIC4KICAgICAgICAgICAgKGludCkgJHJlc1sidXBkYXRlZCJdIC4KICAgICAgICAgICAgIiB8IG9rOiAiIC4KICAgICAgICAgICAgKGludCkgJHJlc1sib2siXSAuCiAgICAgICAgICAgICIgfCBmYWlsZWQ6ICIgLgogICAgICAgICAgICAoaW50KSAkcmVzWyJmYWlsZWQiXSAuCiAgICAgICAgICAgICI8L3A+IjsKCiAgICAgICAgZWNobyAnPHRhYmxlIGJvcmRlcj0iMSIgY2VsbHBhZGRpbmc9IjYiIGNlbGxzcGFjaW5nPSIwIj4nOwogICAgICAgIGVjaG8gIjx0cj48dGg+Y2VsbDwvdGg+PHRoPnN0YXR1czwvdGg+PHRoPm5vdGU8L3RoPjwvdHI+IjsKICAgICAgICBmb3JlYWNoICgkcmVzWyJkZXRhaWxzIl0gYXMgJGQpIHsKICAgICAgICAgICAgZWNobyAiPHRyPiI7CiAgICAgICAgICAgIGVjaG8gIjx0ZD4iIC4gaCgkZFsiY2VsbCJdID8/ICIiKSAuICI8L3RkPiI7CiAgICAgICAgICAgIGVjaG8gIjx0ZD4iIC4gaCgkZFsic3RhdHVzIl0gPz8gIiIpIC4gIjwvdGQ+IjsKICAgICAgICAgICAgZWNobyAiPHRkPiIgLiBoKCRkWyJub3RlIl0gPz8gIiIpIC4gIjwvdGQ+IjsKICAgICAgICAgICAgZWNobyAiPC90cj4iOwogICAgICAgIH0KICAgICAgICBlY2hvICI8L3RhYmxlPiI7CgogICAgICAgIGV4aXQoKTsKICAgIH0KCiAgICBodHRwX3Jlc3BvbnNlX2NvZGUoNDAwKTsKICAgIGVjaG8gIlVua25vd24gbWFpbnRlbmFuY2UgYWN0aW9uLiI7CiAgICBleGl0KCk7Cn0KCi8vID09PT09PT09PT09PT09PT09PT09PT09PT0KLy8gUm91dGVyOiByZXNvbHZlIHBhZ2VfbmFtZQovLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiRwYWdlTmFtZSA9IG51bGw7CmlmIChpc3NldCgkX0dFVFsicCJdKSAmJiBpc19zdHJpbmcoJF9HRVRbInAiXSkgJiYgdHJpbSgkX0dFVFsicCJdKSAhPT0gIiIpIHsKICAgICRwYWdlTmFtZSA9IHRyaW0oJF9HRVRbInAiXSk7Cn0gZWxzZSB7CiAgICAvLyBUcnkgcm91dGVfcmVnaXN0cnkgaWYgZXhpc3RzCiAgICB0cnkgewogICAgICAgICRzdG10ID0gJHBkb191aS0+cHJlcGFyZSgKICAgICAgICAgICAgIlNFTEVDVCBwYWdlX25hbWUgRlJPTSByb3V0ZV9yZWdpc3RyeSBXSEVSRSByb3V0ZV9wYXRoID0gOnAgTElNSVQgMSIsCiAgICAgICAgKTsKICAgICAgICAkc3RtdC0+ZXhlY3V0ZShbIjpwIiA9PiAkcGF0aF0pOwogICAgICAgICRyb3cgPSAkc3RtdC0+ZmV0Y2goKTsKICAgICAgICBpZiAoJHJvdyAmJiBpc3NldCgkcm93WyJwYWdlX25hbWUiXSkpIHsKICAgICAgICAgICAgJHBhZ2VOYW1lID0gKHN0cmluZykgJHJvd1sicGFnZV9uYW1lIl07CiAgICAgICAgfQogICAgfSBjYXRjaCAoUERPRXhjZXB0aW9uICRlKSB7CiAgICAgICAgLy8gNDJTMDIgPSB0YWJsZSBub3QgZm91bmQKICAgICAgICBpZiAoKCRlLT5nZXRDb2RlKCkgPz8gIiIpICE9PSAiNDJTMDIiKSB7CiAgICAgICAgICAgIHRocm93ICRlOwogICAgICAgIH0KICAgIH0KCiAgICBpZiAoJHBhZ2VOYW1lID09PSBudWxsKSB7CiAgICAgICAgJHNsdWcgPSB0cmltKCRwYXRoLCAiLyIpOwogICAgICAgICRwYWdlTmFtZSA9ICRzbHVnICE9PSAiIiA/ICRzbHVnIDogImhvbWUiOwogICAgfQp9CgovLyA9PT09PT09PT09PT09PT09PT09PT09PT09Ci8vIExvYWQgcGFnZSBjb21wb3NpdGlvbgovLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiRzdG10ID0gJHBkb191aS0+cHJlcGFyZSgKICAgICJTRUxFQ1QgcGFnZV90aXRsZSwgcmVxdWlyZXNfbG9naW4sIGNlbGxzX2pzb24gRlJPTSBwYWdlX2NvbXBvc2l0aW9ucyBXSEVSRSBwYWdlX25hbWUgPSA6biBMSU1JVCAxIiwKKTsKJHN0bXQtPmV4ZWN1dGUoWyI6biIgPT4gJHBhZ2VOYW1lXSk7CiRwYWdlID0gJHN0bXQtPmZldGNoKCk7CgppZiAoISRwYWdlKSB7CiAgICBodHRwX3Jlc3BvbnNlX2NvZGUoNDA0KTsKICAgIGVjaG8gIlBhZ2Ugbm90IGZvdW5kLiI7CiAgICBleGl0KCk7Cn0KCiRwYWdlVGl0bGUgPSAoc3RyaW5nKSAoJHBhZ2VbInBhZ2VfdGl0bGUiXSA/PyAkcGFnZU5hbWUpOwokcmVxdWlyZXNMb2dpbiA9IChpbnQpICgkcGFnZVsicmVxdWlyZXNfbG9naW4iXSA/PyAwKSA9PT0gMTsKJGNlbGxzID0ganNvbl9hcnJheSgoc3RyaW5nKSAoJHBhZ2VbImNlbGxzX2pzb24iXSA/PyAiW10iKSk7CgppZiAoJHJlcXVpcmVzTG9naW4gJiYgZW1wdHkoJF9TRVNTSU9OWyJ1c2VyX2lkIl0pKSB7CiAgICAkbmV4dCA9ICRwYXRoOwogICAgJGxvZ2luVXJsID0gJGJhc2VQYXRoIC4gIi9sb2dpbj9uZXh0PSIgLiByYXd1cmxlbmNvZGUoJG5leHQpOwogICAgcmVkaXJlY3RfdG8oJGxvZ2luVXJsKTsKfQoKLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQovLyBDb250ZXh0IGZvciBQSFAgY2VsbHMKLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQpjc3JmX2NoZWNrKCk7CgokY3R4ID0gWwogICAgInBkb191aSIgPT4gJHBkb191aSwKICAgICJwZG9fbWFzdGVyIiA9PiAkcGRvX21hc3RlciwKICAgICJwZG9fdHhuIiA9PiAkcGRvX3R4biwKCiAgICAiYmFzZV9wYXRoIiA9PiAkYmFzZVBhdGgsCiAgICAicGF0aCIgPT4gJHBhdGgsCiAgICAicGFnZV9uYW1lIiA9PiAkcGFnZU5hbWUsCiAgICAicGFnZV90aXRsZSIgPT4gJHBhZ2VUaXRsZSwKCiAgICAiZ2V0IiA9PiAkX0dFVCwKICAgICJwb3N0IiA9PiAkX1BPU1QsCiAgICAicmVxIiA9PiAkX1JFUVVFU1QsCgogICAgLy8gc2Vzc2lvbiBieSByZWZlcmVuY2UKICAgICJzZXNzaW9uIiA9PiAmJF9TRVNTSU9OLAoKICAgIC8vIGhlbHBlcnMKICAgICJoIiA9PiBmbig/c3RyaW5nICRzKTogc3RyaW5nID0+IGgoJHMpLAogICAgImNzcmZfdG9rZW4iID0+IGZuKCk6IHN0cmluZyA9PiBjc3JmX3Rva2VuKCksCiAgICAiY3NyZl9maWVsZCIgPT4gZm4oKTogc3RyaW5nID0+IGNzcmZfZmllbGQoKSwKICAgICJmbGFzaF9nZXQiID0+IGZuKHN0cmluZyAkayk6ID9zdHJpbmcgPT4gZmxhc2hfZ2V0KCRrKSwKICAgIC8vIE5PVEU6IGFycm93IGZ1bmN0aW9ucyBjYW5ub3Qgc2FmZWx5IHdyYXAgdm9pZCBmdW5jdGlvbnM7IHVzZSBhIG5vcm1hbCBjbG9zdXJlLgogICAgImZsYXNoX3NldCIgPT4gZnVuY3Rpb24gKHN0cmluZyAkaywgc3RyaW5nICRtKTogdm9pZCB7CiAgICAgICAgZmxhc2hfc2V0KCRrLCAkbSk7CiAgICB9LAogICAgInVybCIgPT4gZnVuY3Rpb24gKHN0cmluZyAkcmVsID0gIiIpIHVzZSAoJGJhc2VQYXRoKTogc3RyaW5nIHsKICAgICAgICAkcmVsID0gIi8iIC4gbHRyaW0oJHJlbCwgIi8iKTsKICAgICAgICByZXR1cm4gJGJhc2VQYXRoIC4gJHJlbDsKICAgIH0sCiAgICAicmVkaXJlY3QiID0+IGZ1bmN0aW9uIChzdHJpbmcgJHJlbCA9ICIiLCBpbnQgJGNvZGUgPSAzMDIpIHVzZSAoJGJhc2VQYXRoKTogdm9pZCB7CiAgICAgICAgJHJlbCA9ICIvIiAuIGx0cmltKCRyZWwsICIvIik7CiAgICAgICAgcmVkaXJlY3RfdG8oJGJhc2VQYXRoIC4gJHJlbCwgJGNvZGUpOwogICAgfSwKXTsKCiRHTE9CQUxTWyJfX2RiX2xvYWRlZF9jZWxscyJdID0gW107CiRHTE9CQUxTWyJfX2RiX2NlbGxfbG9hZGVyIl0gPSBmdW5jdGlvbiAoc3RyaW5nICRjZWxsTmFtZSkgdXNlICgkcGRvX3VpLCAmJGN0eCk6IHZvaWQgewogICAgJGxvYWRlZCA9ICYkR0xPQkFMU1siX19kYl9sb2FkZWRfY2VsbHMiXTsKICAgIGlmICghaXNfYXJyYXkoJGxvYWRlZCkpIHsKICAgICAgICAkbG9hZGVkID0gW107CiAgICB9CiAgICBpZiAoaXNzZXQoJGxvYWRlZFskY2VsbE5hbWVdKSkgewogICAgICAgIHJldHVybjsKICAgIH0KICAgICRjZWxsID0gZGJfZ2V0X2NlbGwoJHBkb191aSwgJGNlbGxOYW1lLCB0cnVlKTsKICAgIGlmIChzdHJ0b3VwcGVyKCRjZWxsWyJjZWxsX3R5cGUiXSkgIT09ICJQSFAiKSB7CiAgICAgICAgdGhyb3cgbmV3IFJ1bnRpbWVFeGNlcHRpb24oCiAgICAgICAgICAgICJkYl9yZXF1aXJlX29uY2UgY2FuIG9ubHkgbG9hZCBQSFAgY2VsbHMuIEdvdDogIiAuCiAgICAgICAgICAgICAgICAkY2VsbFsiY2VsbF90eXBlIl0gLgogICAgICAgICAgICAgICAgIiBmb3IgIiAuCiAgICAgICAgICAgICAgICAkY2VsbE5hbWUsCiAgICAgICAgKTsKICAgIH0KICAgICRsb2FkZWRbJGNlbGxOYW1lXSA9IHRydWU7CiAgICBleGVjX2NlbGwoJHBkb191aSwgJGNlbGwsICRjdHgpOwp9OwoKLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQovLyBFeGVjdXRlIHBhZ2UgY2VsbHMgaW4gb3JkZXIKLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQp0cnkgewogICAgaGVhZGVyKCJDb250ZW50LVR5cGU6IHRleHQvaHRtbDsgY2hhcnNldD11dGYtOCIpOwoKICAgIGZvcmVhY2ggKCRjZWxscyBhcyAkY2VsbE5hbWUpIHsKICAgICAgICBpZiAoIWlzX3N0cmluZygkY2VsbE5hbWUpIHx8IHRyaW0oJGNlbGxOYW1lKSA9PT0gIiIpIHsKICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgfQogICAgICAgICRjZWxsTmFtZSA9IHRyaW0oJGNlbGxOYW1lKTsKICAgICAgICAkY2VsbCA9IGRiX2dldF9jZWxsKCRwZG9fdWksICRjZWxsTmFtZSwgdHJ1ZSk7CiAgICAgICAgZXhlY19jZWxsKCRwZG9fdWksICRjZWxsLCAkY3R4KTsKICAgIH0KfSBjYXRjaCAoVGhyb3dhYmxlICRlKSB7CiAgICBodHRwX3Jlc3BvbnNlX2NvZGUoNTAwKTsKCiAgICBpZiAoQVBQX0RFQlVHKSB7CiAgICAgICAgZWNobyAnPHByZT5SdW50aW1lIGVycm9yXG4nIC4KICAgICAgICAgICAgaCgkZS0+Z2V0TWVzc2FnZSgpKSAuCiAgICAgICAgICAgICJcblxuIiAuCiAgICAgICAgICAgIGgoJGUtPmdldFRyYWNlQXNTdHJpbmcoKSkgLgogICAgICAgICAgICAiPC9wcmU+IjsKICAgIH0gZWxzZSB7CiAgICAgICAgZWNobyAiUnVudGltZSBlcnJvci4iOwogICAgfQp9Cg==', 'e28436d6f3bc316bd563efe6d2cb237d127e6c28af9dd89dbac87ea3cfab3852', NOW()),
-('app/routes.php', 'PD9waHAKCmRlY2xhcmUoc3RyaWN0X3R5cGVzPTEpOwoKcmV0dXJuIFsKICAgIC8vIFJlc2VydmVkIGZvciBmdXR1cmUgc3RhdGljIHJvdXRlIGRlZmluaXRpb25zLgpdOwo=', '815b401062172aab53d6b244549757b66b172390422d20a897a07639ad83af11', NOW());
+REPLACE INTO app_files (file_path, content_text, updated_at) VALUES
+('app/bootstrap.php', '<?php
+declare(strict_types=1);
+
+/*
+ * App bootstrap extracted from DB bundle.
+ * Responsibilities:
+ *  - session init (if needed)
+ *  - PDO connections to 3 databases
+ *  - router (path -> page_name)
+ *  - page composition loader
+ *  - code cell executor (PHP/HTML/CSS/JS)
+ *  - maintenance endpoint for code_cells (infrastructure)
+ */
+
+// =========================
+// Runtime settings
+// =========================
+if (APP_DEBUG) {
+    ini_set("display_errors", "1");
+    ini_set("display_startup_errors", "1");
+    error_reporting(E_ALL);
+} else {
+    ini_set("display_errors", "0");
+    error_reporting(E_ALL);
+}
+
+header("X-Content-Type-Options: nosniff");
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    // Safe defaults for subfolder apps
+    ini_set("session.use_strict_mode", "1");
+    session_start();
+}
+
+// =========================
+// Helpers
+// =========================
+function h(?string $s): string
+{
+    return htmlspecialchars((string) $s, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
+}
+
+/** @return array<int, mixed> */
+function json_array(string $json): array
+{
+    $json = trim($json);
+    if ($json === "") {
+        return [];
+    }
+    $decoded = json_decode($json, true);
+    if (!is_array($decoded)) {
+        return [];
+    }
+    return $decoded;
+}
+
+function base_path(): string
+{
+    // SCRIPT_NAME usually: /gst_work/main_entry.php
+    $script = $_SERVER["SCRIPT_NAME"] ?? "";
+    $dir = rtrim(str_replace("\\\\", "/", dirname($script)), "/");
+    if ($dir === "" || $dir === ".") {
+        return "";
+    }
+    if ($dir === "/") {
+        return "";
+    }
+    return $dir;
+}
+
+function request_path(string $basePath): string
+{
+    $uri = $_SERVER["REQUEST_URI"] ?? "/";
+    $path = parse_url($uri, PHP_URL_PATH);
+    if (!is_string($path)) {
+        $path = "/";
+    }
+
+    if ($basePath !== "" && str_starts_with($path, $basePath)) {
+        $path = substr($path, strlen($basePath));
+        if ($path === false) {
+            $path = "/";
+        }
+    }
+
+    $path = "/" . ltrim($path, "/");
+    // Normalize: collapse multiple slashes
+    $path = preg_replace("#/+#", "/", $path) ?? $path;
+    return $path;
+}
+
+function redirect_to(string $url, int $code = 302): void
+{
+    header("Location: " . $url, true, $code);
+    exit();
+}
+
+function timing_safe_equals(string $a, string $b): bool
+{
+    return $a === $b;
+}
+
+function pdo_for_db(string $dbName): PDO
+{
+    $charset = "utf8mb4";
+
+    $dsn = "";
+    if (DB_SOCKET !== "" && @is_file(DB_SOCKET)) {
+        $dsn =
+            "mysql:unix_socket=" . DB_SOCKET . ";dbname=" . $dbName . ";charset=" . $charset;
+    } else {
+        $dsn =
+            "mysql:host=" .
+            DB_HOST .
+            ";port=" .
+            (string) DB_PORT .
+            ";dbname=" .
+            $dbName .
+            ";charset=" .
+            $charset;
+    }
+
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
+
+    return $pdo;
+}
+
+function csrf_token(): string
+{
+    if (empty($_SESSION["_csrf_token"]) || !is_string($_SESSION["_csrf_token"])) {
+        $_SESSION["_csrf_token"] = bin2hex(random_bytes(32));
+    }
+    return (string) $_SESSION["_csrf_token"];
+}
+
+function csrf_field(): string
+{
+    return ''<input type="hidden" name="csrf_token" value="'' . h(csrf_token()) . ''">'';
+}
+
+function csrf_check(): void
+{
+    if (($_SERVER["REQUEST_METHOD"] ?? "GET") !== "POST") {
+        return;
+    }
+    $posted = $_POST["csrf_token"] ?? "";
+    $sess = $_SESSION["_csrf_token"] ?? "";
+    if (
+        !is_string($posted) ||
+        !is_string($sess) ||
+        $posted === "" ||
+        $sess !== $posted
+    ) {
+        http_response_code(400);
+        echo "Bad Request (CSRF).";
+        exit();
+    }
+}
+
+function flash_set(string $key, string $msg): void
+{
+    $_SESSION["_flash"][$key] = $msg;
+}
+
+function flash_get(string $key): ?string
+{
+    if (!isset($_SESSION["_flash"][$key])) {
+        return null;
+    }
+    $msg = $_SESSION["_flash"][$key];
+    unset($_SESSION["_flash"][$key]);
+    return is_string($msg) ? $msg : null;
+}
+
+/**
+ * Fetch + decode code cell.
+ *
+ * @return array{cell_name:string, cell_type:string, content:string, version:int}
+ */
+function db_get_cell(PDO $pdo_ui, string $cellName, bool $verifyIntegrity = true): array
+{
+    $stmt = $pdo_ui->prepare(
+        "SELECT cell_name, cell_type, content_text, version FROM code_cells WHERE cell_name = :n AND is_active = 1 LIMIT 1",
+    );
+    $stmt->execute([":n" => $cellName]);
+    $row = $stmt->fetch();
+
+    if (!$row) {
+        throw new RuntimeException("Missing code cell: " . $cellName);
+    }
+
+    $decoded = (string) ($row["content_text"] ?? "");
+
+    return [
+        "cell_name" => (string) $row["cell_name"],
+        "cell_type" => (string) $row["cell_type"],
+        "content" => $decoded,
+        "version" => (int) ($row["version"] ?? 1),
+    ];
+}
+
+function exec_php_cell(string $php, array $ctx): void
+{
+    // Allow cells stored with or without PHP tags
+    $php = preg_replace("/^\\s*<\\?php\\s*/", "", $php) ?? $php;
+    $php = preg_replace(''/\\?>\\s*$/'', "", $php) ?? $php;
+
+    $runner = function () use ($php, $ctx): void {
+        // Provide ctx into local scope
+        $CTX = $ctx;
+        // And also convenience variables
+        extract($ctx, EXTR_SKIP);
+        eval($php);
+    };
+
+    $runner();
+}
+
+function exec_cell(PDO $pdo_ui, array $cell, array $ctx): void
+{
+    $type = strtoupper(trim($cell["cell_type"]));
+    $content = (string) $cell["content"];
+
+    if ($type === "PHP") {
+        exec_php_cell($content, $ctx);
+        return;
+    }
+
+    if ($type === "HTML") {
+        echo $content;
+        return;
+    }
+
+    if ($type === "CSS") {
+        echo "\\n<style>\\n" . $content . "\\n</style>\\n";
+        return;
+    }
+
+    if ($type === "JS") {
+        echo "\\n<script>\\n" . $content . "\\n</script>\\n";
+        return;
+    }
+
+    throw new RuntimeException(
+        "Unsupported cell_type: " . $type . " for cell " . ($cell["cell_name"] ?? ""),
+    );
+}
+
+/**
+ * Implements db_require_once("cell_name") for PHP cells.
+ * The loaded-set is per-request.
+ */
+function db_require_once(string $cellName): void
+{
+    /** @var callable|null $loader */
+    $loader = $GLOBALS["__db_cell_loader"] ?? null;
+    if (!is_callable($loader)) {
+        throw new RuntimeException("db_require_once() is not available in this context.");
+    }
+    $loader($cellName);
+}
+
+/**
+ * Maintenance: list active code_cells.
+ *
+ * @return array{updated:int, ok:int, failed:int, details:array<int, array<string,string>>}
+ */
+function maint_list_cells(PDO $pdo_ui): array
+{
+    $q = $pdo_ui->query(
+        "SELECT cell_name FROM code_cells WHERE is_active = 1 ORDER BY cell_name",
+    );
+    $rows = $q->fetchAll();
+
+    $updated = 0;
+    $ok = 0;
+    $failed = 0;
+    $details = [];
+
+    foreach ($rows as $r) {
+        $name = (string) ($r["cell_name"] ?? "");
+        $ok++;
+        $details[] = [
+            "cell" => $name,
+            "status" => "OK",
+            "note" => "no integrity check configured",
+        ];
+    }
+
+    return [
+        "updated" => $updated,
+        "ok" => $ok,
+        "failed" => $failed,
+        "details" => $details,
+    ];
+}
+
+// =========================
+// Connect DBs
+// =========================
+try {
+    $pdo_ui = pdo_for_db(UI_DB_NAME);
+    $pdo_master = pdo_for_db(MASTER_DB_NAME);
+    $pdo_txn = pdo_for_db(TXN_DB_NAME);
+} catch (Throwable $e) {
+    http_response_code(500);
+    if (APP_DEBUG) {
+        echo ''<pre>DB connection failed.\\n'' .
+            h($e->getMessage()) .
+            "\\n" .
+            h($e->getTraceAsString()) .
+            "</pre>";
+    } else {
+        echo "DB connection failed.";
+    }
+    exit();
+}
+
+$basePath = base_path();
+$path = request_path($basePath);
+
+// =========================
+// Maintenance endpoints (run before any code cell execution)
+// =========================
+$maintAction = null;
+if (isset($_GET["__maint"]) && is_string($_GET["__maint"])) {
+    $maintAction = $_GET["__maint"];
+} elseif ($path === "/__maint/list") {
+    $maintAction = "list";
+}
+
+if ($maintAction !== null) {
+    $token = (string) ($_GET["token"] ?? "");
+    if (!timing_safe_equals($token, MAINT_TOKEN)) {
+        http_response_code(403);
+        echo "Forbidden.";
+        exit();
+    }
+
+    if ($maintAction === "list") {
+        $res = maint_list_cells($pdo_ui);
+
+        header("Content-Type: text/html; charset=utf-8");
+        echo "<h2>Code cells</h2>";
+        echo "<p>updated: " .
+            (int) $res["updated"] .
+            " | ok: " .
+            (int) $res["ok"] .
+            " | failed: " .
+            (int) $res["failed"] .
+            "</p>";
+
+        echo ''<table border="1" cellpadding="6" cellspacing="0">'';
+        echo "<tr><th>cell</th><th>status</th><th>note</th></tr>";
+        foreach ($res["details"] as $d) {
+            echo "<tr>";
+            echo "<td>" . h($d["cell"] ?? "") . "</td>";
+            echo "<td>" . h($d["status"] ?? "") . "</td>";
+            echo "<td>" . h($d["note"] ?? "") . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+
+        exit();
+    }
+
+    http_response_code(400);
+    echo "Unknown maintenance action.";
+    exit();
+}
+
+// =========================
+// Router: resolve page_name
+// =========================
+$pageName = null;
+if (isset($_GET["p"]) && is_string($_GET["p"]) && trim($_GET["p"]) !== "") {
+    $pageName = trim($_GET["p"]);
+} else {
+    // Try route_registry if exists
+    try {
+        $stmt = $pdo_ui->prepare(
+            "SELECT page_name FROM route_registry WHERE route_path = :p LIMIT 1",
+        );
+        $stmt->execute([":p" => $path]);
+        $row = $stmt->fetch();
+        if ($row && isset($row["page_name"])) {
+            $pageName = (string) $row["page_name"];
+        }
+    } catch (PDOException $e) {
+        // 42S02 = table not found
+        if (($e->getCode() ?? "") !== "42S02") {
+            throw $e;
+        }
+    }
+
+    if ($pageName === null) {
+        $slug = trim($path, "/");
+        $pageName = $slug !== "" ? $slug : "home";
+    }
+}
+
+// =========================
+// Load page composition
+// =========================
+$stmt = $pdo_ui->prepare(
+    "SELECT page_title, requires_login, cells_json FROM page_compositions WHERE page_name = :n LIMIT 1",
+);
+$stmt->execute([":n" => $pageName]);
+$page = $stmt->fetch();
+
+if (!$page) {
+    http_response_code(404);
+    echo "Page not found.";
+    exit();
+}
+
+$pageTitle = (string) ($page["page_title"] ?? $pageName);
+$requiresLogin = (int) ($page["requires_login"] ?? 0) === 1;
+$cells = json_array((string) ($page["cells_json"] ?? "[]"));
+
+if ($requiresLogin && empty($_SESSION["user_id"])) {
+    $next = $path;
+    $loginUrl = $basePath . "/login?next=" . rawurlencode($next);
+    redirect_to($loginUrl);
+}
+
+// =========================
+// Context for PHP cells
+// =========================
+csrf_check();
+
+$ctx = [
+    "pdo_ui" => $pdo_ui,
+    "pdo_master" => $pdo_master,
+    "pdo_txn" => $pdo_txn,
+
+    "base_path" => $basePath,
+    "path" => $path,
+    "page_name" => $pageName,
+    "page_title" => $pageTitle,
+
+    "get" => $_GET,
+    "post" => $_POST,
+    "req" => $_REQUEST,
+
+    // session by reference
+    "session" => &$_SESSION,
+
+    // helpers
+    "h" => fn(?string $s): string => h($s),
+    "csrf_token" => fn(): string => csrf_token(),
+    "csrf_field" => fn(): string => csrf_field(),
+    "flash_get" => fn(string $k): ?string => flash_get($k),
+    // NOTE: arrow functions cannot safely wrap void functions; use a normal closure.
+    "flash_set" => function (string $k, string $m): void {
+        flash_set($k, $m);
+    },
+    "url" => function (string $rel = "") use ($basePath): string {
+        $rel = "/" . ltrim($rel, "/");
+        return $basePath . $rel;
+    },
+    "redirect" => function (string $rel = "", int $code = 302) use ($basePath): void {
+        $rel = "/" . ltrim($rel, "/");
+        redirect_to($basePath . $rel, $code);
+    },
+];
+
+$GLOBALS["__db_loaded_cells"] = [];
+$GLOBALS["__db_cell_loader"] = function (string $cellName) use ($pdo_ui, &$ctx): void {
+    $loaded = &$GLOBALS["__db_loaded_cells"];
+    if (!is_array($loaded)) {
+        $loaded = [];
+    }
+    if (isset($loaded[$cellName])) {
+        return;
+    }
+    $cell = db_get_cell($pdo_ui, $cellName, true);
+    if (strtoupper($cell["cell_type"]) !== "PHP") {
+        throw new RuntimeException(
+            "db_require_once can only load PHP cells. Got: " .
+                $cell["cell_type"] .
+                " for " .
+                $cellName,
+        );
+    }
+    $loaded[$cellName] = true;
+    exec_cell($pdo_ui, $cell, $ctx);
+};
+
+// =========================
+// Execute page cells in order
+// =========================
+try {
+    header("Content-Type: text/html; charset=utf-8");
+
+    foreach ($cells as $cellName) {
+        if (!is_string($cellName) || trim($cellName) === "") {
+            continue;
+        }
+        $cellName = trim($cellName);
+        $cell = db_get_cell($pdo_ui, $cellName, true);
+        exec_cell($pdo_ui, $cell, $ctx);
+    }
+} catch (Throwable $e) {
+    http_response_code(500);
+
+    if (APP_DEBUG) {
+        echo ''<pre>Runtime error\\n'' .
+            h($e->getMessage()) .
+            "\\n\\n" .
+            h($e->getTraceAsString()) .
+            "</pre>";
+    } else {
+        echo "Runtime error.";
+    }
+}
+', NOW()),
+('app/routes.php', '<?php
+
+declare(strict_types=1);
+
+return [
+    // Reserved for future static route definitions.
+];
+', NOW());

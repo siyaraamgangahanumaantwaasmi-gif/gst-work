@@ -7,7 +7,7 @@ declare(strict_types=1);
 const APP_DEBUG = false; // true for verbose errors
 
 // IMPORTANT: set a long random token before using maintenance endpoints.
-const MAINT_TOKEN = "hash_RESET_TOKEN";
+const MAINT_TOKEN = "RESET_TOKEN";
 
 // Database credentials
 const DB_USER = "gstr1";
@@ -63,30 +63,14 @@ function pdo_for_ui_db(): PDO
 
 function extract_app_files(PDO $pdo, string $projectRoot): void
 {
-    $stmt = $pdo->query("SELECT file_path, content_base64, sha256 FROM app_files ORDER BY file_path");
+    $stmt = $pdo->query("SELECT file_path, content_text FROM app_files ORDER BY file_path");
     $rows = $stmt->fetchAll();
 
     foreach ($rows as $row) {
         $filePath = (string) ($row["file_path"] ?? "");
-        $contentBase64 = (string) ($row["content_base64"] ?? "");
-        $shaStored = strtolower(trim((string) ($row["sha256"] ?? "")));
-
+        $contentText = (string) ($row["content_text"] ?? "");
         if ($filePath === "") {
             continue;
-        }
-
-        $decoded = base64_decode($contentBase64, true);
-        if ($decoded === false) {
-            $contentBase64 = preg_replace("/\s+/", "", $contentBase64) ?? "";
-            $decoded = base64_decode($contentBase64, true);
-        }
-        if ($decoded === false) {
-            throw new RuntimeException("Invalid base64 for file: " . $filePath);
-        }
-
-        $shaComputed = strtolower(hash("sha256", $decoded));
-        if ($shaStored !== "" && !hash_equals($shaStored, $shaComputed)) {
-            throw new RuntimeException("SHA mismatch for file: " . $filePath);
         }
 
         $target = rtrim($projectRoot, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $filePath;
@@ -98,13 +82,13 @@ function extract_app_files(PDO $pdo, string $projectRoot): void
         }
 
         if (is_file($target)) {
-            $existing = hash_file("sha256", $target);
-            if (hash_equals($existing, $shaComputed)) {
+            $existing = file_get_contents($target);
+            if ($existing === $contentText) {
                 continue;
             }
         }
 
-        if (file_put_contents($target, $decoded) === false) {
+        if (file_put_contents($target, $contentText) === false) {
             throw new RuntimeException("Failed to write file: " . $target);
         }
     }
