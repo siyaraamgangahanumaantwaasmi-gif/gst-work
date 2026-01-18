@@ -1,4 +1,4 @@
-# file: .htaccess
+# file: public/.htaccess
 # Subfolder-independent rewrite for SINGLE entry file: main_entry.php
 # Keep this .htaccess in the SAME folder as main_entry.php.
 
