@@ -1,0 +1,1961 @@
+1) ONE-PAGE DAILY FLOW SOP (सुबह-शाम)
+
+MORNING (Start of Day)
+[ ] A12 Cash Book: Opening cash count = physical cash (sign)
+[ ] A11 Bank Book: Check bank/UPI messages; note pending credits/debits
+[ ] A14/A15 Outstanding: Today’s collection targets + vendor payments due
+[ ] A16/A18 Plan: Pending Sales Orders / Dispatch / Delivery Challans
+[ ] A5 Issue quotes/PI (if needed) → log
+[ ] A6 Raise Sales Invoice (or A18 DC first) with GST logic:
+    - POS State, Supply Type (L/I/E/SEZ), GST Type (CGST+SGST/IGST), HSN/SAC
+[ ] A22 Update stock OUT (if goods) + link Invoice/DC
+[ ] A7 Record Purchase Invoices received (mark ITC Code E/B/R/N, RCM flag, ITC Claim Month)
+[ ] A22 Update stock IN (if goods) + link purchase invoice/GRN
+[ ] A8 Record Expense bills (GST/Non-GST + Cost Center/Project + ITC Code)
+[ ] C2 Check TDS/TCS triggers BEFORE payment/credit; mark Section Code (if applicable)
+
+EVENING (End of Day)
+[ ] A10 Record receipts/collections; issue receipt no; update A14 ageing
+[ ] A9 Record payments; if TDS deducted, ensure C2 entry exists
+[ ] A13 Petty cash vouchers attached + approvals
+[ ] A12 Cash Book: Closing cash count (verify) + sign
+[ ] A11 Bank Book: Post all bank/UPI entries done today
+[ ] A25 GL Posting Index: Post today’s docs to ledger folios (minimum: index updated)
+[ ] A28 Numbering Control: Check for missing/cancelled doc numbers; log exceptions
+[ ] A29 Filing Index: File originals in physical file; scan/photo to digital folder
+[ ] Exception Log (A30): Note any control failures and corrective action
+
+
+2) WEEKLY CHECKLIST (Tick once per week)
+
+[ ] A14 Receivables: Ageing update + follow-up calls + notes
+[ ] A15 Payables: Ageing update + payment plan
+[ ] A22 Stock cycle count (select items) + variances to A23
+[ ] A7/A8 ITC review: mark Blocked codes; separate RCM items
+[ ] B5 Vendor follow-up list: invoices missing in 2B, wrong GSTIN, rate mismatch
+[ ] C2 TDS/TCS review: any payments/credits needing deduction? ensure entries made
+[ ] A11/A12 Quick bank/cash sanity check (no negative balances; unusual items explained)
+[ ] A29 Filing audit: ensure all documents for week filed + scanned
+[ ] A30 Controls: sign-off for week (Prepared/Checked)
+
+
+3) MONTHLY CLOSING CHECKLIST (Month-end close)
+
+BOOKS / OPERATIONS
+[ ] Close A6 Sales totals (Taxable, GST split, Total, unpaid)
+[ ] Close A7 Purchases totals (Taxable, GST, ITC E/B/R/N, RCM)
+[ ] Close A8 Expenses totals by Cost Category/Center + ITC codes
+[ ] Close A9/A10 totals by mode (C/B/U) and verify with A11/A12
+[ ] A27 BRS: Bank Book vs Bank Statement (Diff = 0 after recon)
+[ ] A22 Closing stock qty/value; log adjustments in A23
+[ ] A26 Prepare Monthly MIS summary (one page) + sign-off
+[ ] A25 Posting completeness review: ensure all month docs are posted (A25 has no missing source docs)
+[ ] A25F Adjusting entries checklist completed; JVs passed in A24 and posted to ledgers
+[ ] A25B Trial Balance prepared (Difference = 0) + signed
+[ ] A25C P&L prepared from TB + signed
+[ ] A25D Balance Sheet prepared from TB + signed
+[ ] A25E Cash Flow Snapshot prepared; closing matches TB bank/cash ledgers
+[ ] D2 Other-law compliance calendar reviewed/updated; any due items closed
+
+
+GST (Monthly/QRMP as applicable)
+[ ] B2 Prepare GSTR-1 working from A6 + A20/A21 (CN/DN) + exports/advances if any
+[ ] B6 Reconcile GSTR-1 vs Books totals
+[ ] B5 Download GSTR-2B and complete 2B vs Books reconciliation (vendor follow-ups)
+[ ] B4 Finalize ITC claim list (Eligible/Blocked/RCM/Reversal)
+[ ] B3 Prepare GSTR-3B summary + set-off plan (cash/credit)
+[ ] B7 Reconcile 3B vs books + cash/credit ledger; keep challan refs (B9)
+[ ] B1 Update compliance calendar: Due Date (Fill), Actual Filing Date, ARN
+
+INCOME TAX / PAYROLL (if applicable)
+[ ] C2 Month TDS list final; deduct + book entries
+[ ] C3 Deposit TDS (and interest/fee if any); capture challan details
+[ ] C10 Salary month sheet + pay; reconcile with bank/cash
+[ ] C11/C12 PF/ESI computations + challans + paid dates
+[ ] C13 Professional tax (state-wise) payment tracking
+[ ] C1 Update compliance calendar with all actions
+
+RECORDS
+[ ] A28 Month-end numbering summary + gap check
+[ ] A29 Physical file closed + digital folder backup
+
+
+4) QUARTERLY / YEARLY CHECKLIST
+
+QUARTERLY
+[ ] C4 File TDS returns (24Q/26Q/27Q/27EQ) → token/ack captured
+[ ] C8 Advance tax compute & pay (if applicable) → challan captured
+[ ] B1 GST calendar updated for quarter (QRMP or any quarterly filings)
+[ ] Review outstanding confirmations: top customers/vendors (A14/A15)
+[ ] Review blocked ITC and reversals completeness (B8/B4)
+[ ] D2 Review other-law calendar for next quarter (renewals/returns/payments planned)
+
+YEARLY (Year-end closing)
+[ ] Full physical stock count + valuation support (A22)
+[ ] C16 Fixed assets updated; depreciation computed (block-wise)
+[ ] B2/B3/B4/B5 Annual GST reconciliation placeholder (Books vs Returns vs 2B)
+[ ] C6 26AS reconciliation + C7 AIS/TIS reconciliation closed
+[ ] C18 ITR data pack complete; proofs filed and indexed
+[ ] If audit applicable: C19 audit file index ready + reconciliations pack
+[ ] A29 retention labels updated (Retention Till)
+[ ] A25B Year-end Trial Balance finalized (Difference = 0)
+[ ] A25C Year-end P&L finalized; profit transferred/checked with capital (A31)
+[ ] A25D Year-end Balance Sheet finalized (Assets = Liab+Equity)
+[ ] D1 Applicability + licenses master reviewed for new FY; renewals planned
+[ ] D3 Statutory registers index reviewed; missing registers created (if any)
+
+
+5) ALL REGISTERS (A → C) TEMPLATES
+
+A1) REGISTER NAME: Business Profile Cover Page (Handwritten)
+PURPOSE: One-page business master + numbering + tax configuration reference.
+FREQUENCY: Update when changes occur (and review yearly)
+HEADER FIELDS (page top): FY ____ | Page ____ | Prepared ____ | Checked ____
+
+FILL-IN FIELDS (write on first page)
+- Proprietor Name: _______________________________
+- Trade Name: ___________________________________
+- Business Address: ______________________________
+- Mobile/Email: __________________________________
+- PAN: __________________   GSTIN: __________________
+- Bank A/c Name & No (last 4): ____________________
+- IFSC: ________________   Branch: ________________
+- UPI ID(s): ______________________________________
+- GST Registration Type: Regular / Composition (tick)
+- Return Frequency: Monthly / QRMP (tick) / Not sure (tick)
+- LUT (if applicable): LUT No ________ Validity ________
+- Major HSN/SAC used: (use table below)
+- Standard GST Rates used: (use table below)
+- Document series/prefixes: (use table below)
+- Default Payment Terms: ______ days   Credit Limit policy: ___________
+- Cost Centers/Projects used (codes): _______________________________
+- Prepared By/Checked By sign: _________________________________
+
+HSN/SAC MASTER (10 rows)
+| Sl | Item/Service | HSN/SAC | GST Rate% | Unit | Notes |
+| --- | ------------ | ------- | --------- | ---- | ----- |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+GST RATE LIST (10 rows)
+| Sl | Supply Type/Category | GST Rate% | HSN/SAC | Exempt/Nil? (Y/N) | Notes |
+| --- | -------------------- | --------- | ------- | ----------------- | ----- |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+DOCUMENT SERIES / PREFIX CONTROL (10 rows)
+| Sl | Doc Type | Prefix | Series Start | Current No | Reset Frequency | Cancelled Nos (if any) | Remarks |
+| --- | -------- | ------ | ------------ | ---------- | --------------- | ---------------------- | ------- |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+
+TOTALS / CONTROL CHECKS:
+- Any change in GSTIN/Address/Bank/UPI must be updated here first.
+- Invoice series must not overlap across FY; record reset rules.
+
+
+A2) REGISTER NAME: Customer Master Register
+PURPOSE: All customer master data in one place.
+FREQUENCY: As-needed (update)
+HEADER FIELDS (page top): As on Date ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Customer Code | Customer Name | GSTIN | State | Address | Contact | Email | Payment Terms | Credit Limit | TCS? (Y/N) | Status(O/P/C) | Remarks |
+| --- | ------------- | ------------- | ----- | ----- | ------- | ------- | ----- | ------------- | ------------ | ---------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Unique Customer Code mandatory
+- GSTIN format check (15 chars) for B2B customers
+- TCS? flag only if applicable to you
+
+A3) REGISTER NAME: Supplier/Vendor Master Register
+PURPOSE: All vendor master + GST/TDS flags.
+FREQUENCY: As-needed (update)
+HEADER FIELDS (page top): As on Date ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Vendor Code | Vendor Name | GSTIN | PAN | State | Address | Contact | Email | Payment Terms | RCM Applicable? (Y/N) | TDS Section (if any) | Status(O/P/C) | Remarks |
+| --- | ----------- | ----------- | ----- | --- | ----- | ------- | ------- | ----- | ------------- | --------------------- | -------------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Vendor GSTIN/PAN mandatory for compliance vendors
+- Mark RCM Applicable? and usual TDS Section for quick monthly checks
+
+A4) REGISTER NAME: Item/Service Master (HSN/SAC + GST rate)
+PURPOSE: Standardize billing + stock/ITC classification.
+FREQUENCY: As-needed (update)
+HEADER FIELDS (page top): As on Date ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Item/Service Code | Description | HSN/SAC | GST Rate% | Unit | Sale Price | Purchase Price | Reorder Level | Stock Type (RM/FG/SVC) | ITC Category(I/IS/CG) | Remarks |
+| --- | ----------------- | ----------- | ------- | --------- | ---- | ---------- | -------------- | ------------- | ---------------------- | --------------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- HSN/SAC + GST Rate must match invoice
+- Reorder Level used for purchase planning
+- ITC Category: I=Inputs, IS=Input Services, CG=Capital Goods
+
+A5) REGISTER NAME: Quotation/Proforma Register
+PURPOSE: Track quotes/PI and conversion to SO/Invoice.
+FREQUENCY: Daily (as issued)
+HEADER FIELDS (page top): Period ____ to ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Quote/PI No | Customer | GSTIN (if B2B) | Valid Till | Taxable Value | GST Type(L/I) | GST Amt | Total | Status(O/P/C) | Linked SO/Inv | Remarks |
+| --- | ---- | ----------- | -------- | -------------- | ---------- | ------------- | ------------- | ------- | ----- | ------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Quote/PI No must follow numbering SOP (A28)
+- Monthly total of 'Total' can be used for sales pipeline
+
+A6) REGISTER NAME: Sales Invoice Register (Auto GST Logic)
+PURPOSE: Primary sales record for books + GSTR-1 base.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ (Month) | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Inv Date | Invoice No | Customer | Customer GSTIN | POS State | Supply Type(L/I/E/SEZ) | GST Type(CGST+SGST/IGST) | HSN/SAC | Taxable Value | GST Rate% | CGST | SGST | IGST | Cess | Round-off | Invoice Total | Payment Mode(C/B/U) | Payment Status(O/P/C) | Receipt Ref | IRN/E-inv (if any) | EWB No (if any) | Ledger Folio | Remarks |
+| --- | -------- | ---------- | -------- | -------------- | --------- | ---------------------- | ------------------------ | ------- | ------------- | --------- | ---- | ---- | ---- | ---- | --------- | ------------- | ------------------- | --------------------- | ----------- | ------------------ | --------------- | ------------ | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Month total Taxable + GST should match GSTR-1 Working (B2) and MIS (A26)
+- Payment Status must tie to Receipts (A10) and Outstanding (A14)
+- Supply Type decides GST Type: L=>CGST+SGST, I/E/SEZ=>IGST (as applicable)
+
+A7) REGISTER NAME: Purchase Invoice Register (ITC Eligibility + Blocked)
+PURPOSE: Primary purchase record + ITC tracking for 2B & 3B.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ (Month) | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Inv Recv Date | Vendor | Vendor GSTIN | Vendor Inv No | Vendor Inv Date | POS State | RCM? (Y/N) | Category(I/IS/CG) | Taxable Value | GST Rate% | CGST | SGST | IGST | Total | ITC Code(E/B/R/N) | Blocked Reason Code | ITC Claim Month | 2B Available?(Y/N) | Cost Center/Project | Payment Status(O/P/C) | Payment Ref | Ledger Folio | Remarks |
+| --- | ------------- | ------ | ------------ | ------------- | --------------- | --------- | ---------- | ----------------- | ------------- | --------- | ---- | ---- | ---- | ----- | ----------------- | ------------------- | --------------- | ------------------ | ------------------- | --------------------- | ----------- | ------------ | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- ITC Code must be set for every GST invoice (E/B/R/N)
+- Month-wise ITC claim should match ITC Ledger (B4) and 3B ITC (B3)
+- 2B Available? should be updated during monthly reconciliation (B5)
+
+A8) REGISTER NAME: Expense Register (GST/Non-GST + Cost Tracking)
+PURPOSE: All non-inventory expenses with ITC + cost center.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ (Month) | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Voucher No | Expense Head | Vendor/Payee | GSTIN (if any) | Bill No/Ref | Taxable Value | GST Amt | ITC Code(E/B/R/N) | Blocked Reason Code | Cost Category | Cost Center/Project | Nature(D/I) | Payment Mode(C/B/U) | Paid?(Y/N) | Payment Ref | Ledger Folio | Remarks |
+| --- | ---- | ---------- | ------------ | ------------ | -------------- | ----------- | ------------- | ------- | ----------------- | ------------------- | ------------- | ------------------- | ----------- | ------------------- | ---------- | ----------- | ------------ | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Cost Category + Cost Center mandatory for MIS
+- ITC Code must be B for blocked items; use Blocked Reason Code
+- Paid? ties to Payments (A9)/Petty Cash (A13)
+
+A9) REGISTER NAME: Payments Register (Bank/Cash/UPI)
+PURPOSE: All outgoing payments with TDS linkage.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ (Month) | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Payment Vch No | Payee | Purpose/Head | Invoice/Ref | Gross Amt | TDS Deducted?(Y/N) | TDS Sec | TDS Amt | Net Paid | Mode(C/B/U) | Bank A/c | UTR/Ref | Status(O/P/C) | Remarks |
+| --- | ---- | -------------- | ----- | ------------ | ----------- | --------- | ------------------ | ------- | ------- | -------- | ----------- | -------- | ------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Gross - TDS = Net Paid check
+- If TDS Deducted=Y, entry must exist in TDS Deduction (C2) and challan later (C3)
+- Sum of payments by mode should tie to Bank Book (A11) + Cash Book (A12)
+
+A10) REGISTER NAME: Receipts Register (Collections)
+PURPOSE: All incoming collections and advances.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ (Month) | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Receipt No | Customer | Invoice/Ref | Amount Received | Mode(C/B/U) | Bank/UPI Ref | Against (Inv/Adv/Other) | TCS Collected?(Y/N) | Status(O/P/C) | Remarks |
+| --- | ---- | ---------- | -------- | ----------- | --------------- | ----------- | ------------ | ----------------------- | ------------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Sum of receipts by mode must tie to Bank Book (A11) + Cash Book (A12)
+- Receipts must reduce Outstanding Receivables (A14)
+- Advance receipts (if any) must be separately tracked for GST if applicable
+
+A11) REGISTER NAME: Bank Book
+PURPOSE: Daily bank/UPI movement ledger.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Bank A/c ____ | Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Particulars | Voucher/Doc Ref | Debit (In) | Credit (Out) | Balance | Bank A/c | UTR/Cheque/UPI Ref | Narration | Checked(Y/N) |
+| --- | ---- | ----------- | --------------- | ---------- | ------------ | ------- | -------- | ------------------ | --------- | ------------ |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Daily closing balance should match bank app/statement (approx; final via BRS A27)
+- All Bank mode receipts/payments must appear here (A9/A10)
+
+A12) REGISTER NAME: Cash Book
+PURPOSE: Daily cash movement + cash count control.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Particulars | Voucher/Doc Ref | Cash In | Cash Out | Balance | Narration | Cash Count Verified(Y/N) | Checked By |
+| --- | ---- | ----------- | --------------- | ------- | -------- | ------- | --------- | ------------------------ | ---------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Daily cash count must equal closing balance
+- Petty Cash issues must be recorded (A13)
+- No negative cash balance allowed (control)
+
+A13) REGISTER NAME: Petty Cash Register
+PURPOSE: Small cash expenses with approvals.
+FREQUENCY: Daily/Weekly
+HEADER FIELDS (page top): Petty Cash Holder ____ | Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Petty Vch No | Particulars | Cost Category | Amount | Approved By | Cash Out | Balance | Bill Attached?(Y/N) | Remarks |
+| --- | ---- | ------------ | ----------- | ------------- | ------ | ----------- | -------- | ------- | ------------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Opening + Cash In - Cash Out = Closing
+- Every entry must have voucher + bill attached (Y/N)
+- Monthly petty cash total should tie to Cash Book (A12)
+
+A14) REGISTER NAME: Outstanding Tracker - Customer Receivables Ageing
+PURPOSE: Track unpaid invoices and follow-ups.
+FREQUENCY: Daily/Weekly
+HEADER FIELDS (page top): As on Date ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Customer | Invoice No | Inv Date | Due Date | Invoice Total | Received Till Date | Balance | Ageing(0-30/31-60/61-90/90+) | Last Follow-up Date | Next Action Date | Status(O/P/C) | Remarks |
+| --- | -------- | ---------- | -------- | -------- | ------------- | ------------------ | ------- | ---------------------------- | ------------------- | ---------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Total Balance should tie to Debtors control in Ledger/MIS
+- Ageing buckets updated weekly
+- Status C only when fully received
+
+A15) REGISTER NAME: Outstanding Tracker - Vendor Payables Ageing
+PURPOSE: Track dues to vendors and payment planning.
+FREQUENCY: Daily/Weekly
+HEADER FIELDS (page top): As on Date ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Vendor | Vendor Inv No | Inv Date | Due Date | Invoice Total | Paid Till Date | Balance | Ageing(0-30/31-60/61-90/90+) | Last Follow-up Date | Next Action Date | Status(O/P/C) | Remarks |
+| --- | ------ | ------------- | -------- | -------- | ------------- | -------------- | ------- | ---------------------------- | ------------------- | ---------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Total Balance should tie to Creditors control in Ledger/MIS
+- Ageing buckets updated weekly
+- Status C only when fully paid
+
+A16) REGISTER NAME: Sales Order Register
+PURPOSE: Track customer orders till dispatch/invoice.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | SO Date | Sales Order No | Customer | Items Summary | Order Value | Expected Dispatch | Status(O/P/C) | Linked DC | Linked Invoice | Remarks |
+| --- | ------- | -------------- | -------- | ------------- | ----------- | ----------------- | ------------- | --------- | -------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- SO should link to Delivery Challan (A18) and Invoice (A6)
+- Open SO review weekly
+
+A17) REGISTER NAME: Purchase Order Register
+PURPOSE: Track purchase orders till receipt and invoice.
+FREQUENCY: Daily/Weekly
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | PO Date | Purchase Order No | Vendor | Items Summary | Order Value | Expected Delivery | Status(O/P/C) | Received?(Y/N) | Linked Purchase Inv | Remarks |
+| --- | ------- | ----------------- | ------ | ------------- | ----------- | ----------------- | ------------- | -------------- | ------------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- PO should link to Purchase Invoice (A7) and Stock Inward (A22)
+- Open PO review weekly
+
+A18) REGISTER NAME: Delivery Challan Register
+PURPOSE: Control movement of goods/services delivery before invoicing.
+FREQUENCY: Daily (as issued)
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | DC Date | DC No | Customer | Items/Qty | Vehicle No | From | To | EWB No | Linked Invoice | Returned?(Y/N) | Status(O/P/C) | Remarks |
+| --- | ------- | ----- | -------- | --------- | ---------- | ---- | --- | ------ | -------------- | -------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- DC numbering must follow SOP (A28)
+- DC must link to Invoice (A6) OR return (A19)
+
+A19) REGISTER NAME: Returns Register (Sales + Purchase)
+PURPOSE: Track returns, stock impact, and CN/DN linkage.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Return Type(SR/PR) | Return Date | Return Doc No | Original Inv No | Party | Items/Qty | Taxable Value | GST Amt | CN/DN No (if issued) | Stock Updated?(Y/N) | Status(O/P/C) | Remarks |
+| --- | ------------------ | ----------- | ------------- | --------------- | ----- | --------- | ------------- | ------- | -------------------- | ------------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Return must update Stock Register (A22/A23)
+- If CN/DN issued, link in CN (A20) / DN (A21)
+- GST impact must flow to GSTR-1/3B as applicable
+
+A20) REGISTER NAME: Credit Note Register
+PURPOSE: Track sales credit notes for GST + accounting.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | CN Date | Credit Note No | Customer | Customer GSTIN | Original Invoice No | Reason Code | Taxable Value | CGST | SGST | IGST | Total CN | Included in GSTR-1?(Y/N) | Status(O/P/C) | Remarks |
+| --- | ------- | -------------- | -------- | -------------- | ------------------- | ----------- | ------------- | ---- | ---- | ---- | -------- | ------------------------ | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- CN totals must reconcile with GSTR-1 CN/DN section (B2)
+- CN must reduce receivable and output tax accordingly
+
+A21) REGISTER NAME: Debit Note Register
+PURPOSE: Track purchase debit notes and ITC impact.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | DN Date | Debit Note No | Vendor | Vendor GSTIN | Original Invoice No | Reason Code | Taxable Value | CGST | SGST | IGST | Total DN | ITC Impact?(Y/N) | Status(O/P/C) | Remarks |
+| --- | ------- | ------------- | ------ | ------------ | ------------------- | ----------- | ------------- | ---- | ---- | ---- | -------- | ---------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- DN totals must be reflected in purchase adjustments + ITC if applicable
+- Link to vendor settlement in Payables (A15)
+
+A22) REGISTER NAME: Inventory / Stock Register (Qty + Value)
+PURPOSE: Stock movement with quantity+value for control.
+FREQUENCY: Daily
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Item Code | Batch/Serial | Unit | Opening Qty | Opening Value | Inward Qty | Inward Value | Outward Qty | Outward Value | Adj(+/-) Qty | Wastage Qty | Closing Qty | Closing Value | Avg Rate | Doc Ref | Remarks |
+| --- | ---- | --------- | ------------ | ---- | ----------- | ------------- | ---------- | ------------ | ----------- | ------------- | ------------ | ----------- | ----------- | ------------- | -------- | ------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Opening + Inward + Adj - Outward - Wastage = Closing (Qty control)
+- Closing value ties to inventory ledger control
+- Cycle count variances logged in A23
+
+A23) REGISTER NAME: Stock Adjustment & Wastage Register
+PURPOSE: Record stock variances/wastage with approvals.
+FREQUENCY: As-needed / Weekly
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Adj Type(ADJ/WST) | Reason Code | Item Code | Batch/Serial | Qty(+/-) | Rate | Value | Doc Ref | Approved By | Stock Updated?(Y/N) | Remarks |
+| --- | ---- | ----------------- | ----------- | --------- | ------------ | -------- | ---- | ----- | ------- | ----------- | ------------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Every adjustment must have Reason Code + approval
+- Total value of adjustments should tie to Journal Voucher (A24) if booked
+
+A24) REGISTER NAME: Journal Voucher / Adjustment Register
+PURPOSE: Non-cash entries: accruals, depreciation, drawings, GST adjustments.
+FREQUENCY: Weekly/Monthly
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | JV Date | JV No | Narration | Debit Ledger | Credit Ledger | Amount | GST Adj Type (if any) | Supporting Doc Ref | Posted to Ledger?(Y/N) | Checked By | Remarks |
+| --- | ------- | ----- | --------- | ------------ | ------------- | ------ | --------------------- | ------------------ | ---------------------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Debits must equal credits per JV
+- All JV must be posted via GL Posting Index (A25)
+- Use GST Adj Type for reversals/RCM etc to link to GST registers
+
+A25) REGISTER NAME: General Ledger Posting Index
+PURPOSE: Cross-reference: document to ledger folio/page.
+FREQUENCY: Daily/Weekly
+HEADER FIELDS (page top): Period ____ | Page ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Doc Type | Doc No | Source Register (A/B/C) | Ledger Account | Folio/Page No | Debit | Credit | Posted By | Checked By | Remarks |
+| --- | ---- | -------- | ------ | ----------------------- | -------------- | ------------- | ----- | ------ | --------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Every source doc (A6/A7/A8/A9/A10/A24) must be posted once
+- No missing folio references (audit trail)
+
+A25A) REGISTER NAME: Chart of Accounts (COA) Master + FS Mapping
+PURPOSE: Ledger list + mapping to Trial Balance / P&L / Balance Sheet (handwritten-ready).
+FREQUENCY: Yearly setup + update on change
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Ledger Code | Ledger Name | Type(A/L/E/I/X) | Group (Current/Fixed/Direct/Indirect etc) | FS Line (P&L/BS) | GST Link (Output/Input/RCM/NA) | TDS/TCS Link (Sec/NA) | Default Cost Center (optional) | Active(Y/N) | Notes |
+| -- | ----------- | ----------- | --------------- | ----------------------------------------- | ---------------- | ------------------------------ | --------------------- | ------------------------------ | ----------- | ----- |
+|    |             |             |                 |                                           |                  |                                |                       |                                |             |       |
+|    |             |             |                 |                                           |                  |                                |                       |                                |             |       |
+|    |             |             |                 |                                           |                  |                                |                       |                                |             |       |
+
+TOTALS / CONTROL CHECKS:
+- Every Ledger used in A25 postings must exist in COA (no “new ledger without COA”).
+- COA must mark which ledgers appear in P&L vs Balance Sheet.
+Minimum COA starter (fill as applicable)
+
+Assets: Cash, Bank, Debtors Control, Inventory/Stock, GST ITC ledgers, Fixed Assets, Advances/Deposits
+
+Liabilities: Creditors Control, GST Output/Payable, TDS Payable, PF/ESI/PT Payable, Loans
+
+Equity: Capital, Drawings, Current Year Profit/Loss
+
+Income: Sales/Service Income, Other Income
+
+Expenses: Purchases/COGS, Direct Exp, Indirect Exp, Depreciation
+
+A25B) Trial Balance (TB) Sheet
+A25B) REGISTER NAME: Trial Balance (TB) Sheet
+PURPOSE: Base for P&L + Balance Sheet; control that Dr=Cr.
+FREQUENCY: Monthly + Year-end
+HEADER FIELDS (page top): FY ____ | Period (Month/Year) ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Ledger Code | Ledger Name | Closing Dr | Closing Cr | Ledger Folio/Page Ref | Checked(Y/N) | Remarks |
+| -- | ----------- | ----------- | ---------- | ---------- | --------------------- | ------------ | ------- |
+|    |             |             |            |            |                       |              |         |
+|    |             |             |            |            |                       |              |         |
+|    |             |             |            |            |                       |              |         |
+
+TOTALS / CONTROL CHECKS:
+- Total Closing Dr = Total Closing Cr (Difference must be 0).
+- Bank/Cash closing in TB must match A11/A12 month-end close (after BRS A27 if needed).
+- Debtors control in TB should tie to Outstanding (A14) total balance.
+- Creditors control in TB should tie to Outstanding (A15) total balance.
+- Stock/Inventory in TB should tie to A22 closing valuation (and physical count at year-end).
+
+A25C) Profit & Loss Statement (Monthly/Yearly)
+A25C) REGISTER NAME: Profit & Loss Statement (Monthly/Yearly)
+PURPOSE: Profit computation for business review + ITR base.
+FREQUENCY: Monthly + Yearly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Type (Income/Expense) | Nature (Direct/Indirect/Other) | Ledger Code | Ledger Name | Amount | Ref TB Line | Remarks |
+| -- | --------------------- | ------------------------------ | ----------- | ----------- | ------ | ----------- | ------- |
+|    | Income                |                                |             |             |        |             |         |
+|    | Expense               | Direct                         |             |             |        |             |         |
+|    | Expense               | Indirect                       |             |             |        |             |         |
+
+TOTALS / CONTROL CHECKS:
+- Total Income - Total Expenses = Net Profit/Loss.
+- Net Profit should reconcile with capital movement check:
+  Closing Capital = Opening Capital + Net Profit + Capital Introduced - Drawings (use A31 + Capital ledger).
+- Sales figure should tie to A6 totals (taxable + exempt if any).
+- Major expenses totals should tie to A8 summaries and JV (A24) if adjustments exist.
+
+A25D) Balance Sheet (Monthly/Yearly)
+A25D) REGISTER NAME: Balance Sheet (Monthly/Yearly)
+PURPOSE: Assets vs Liabilities+Equity snapshot; audit-ready.
+FREQUENCY: Monthly + Yearly
+HEADER FIELDS (page top): FY ____ | As on Date ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Side (Assets/Liab/Equity) | Group          | Ledger Code | Ledger Name | Amount | Ref TB Line | Remarks |
+| -- | ------------------------- | -------------- | ----------- | ----------- | ------ | ----------- | ------- |
+|    | Assets                    | Current Assets |             |             |        |             |         |
+|    | Assets                    | Fixed Assets   |             |             |        |             |         |
+|    | Liab                      | Current Liab   |             |             |        |             |         |
+|    | Equity                    | Capital        |             |             |        |             |         |
+
+TOTALS / CONTROL CHECKS:
+- Total Assets must equal Total Liabilities + Equity (Difference must be 0).
+- Closing stock value must match A22 valuation (and year-end physical sign-off).
+- Fixed assets should tie to C16 (if you maintain fixed asset ledger).
+- GST payable/receivable lines should be consistent with GST workings (B3/B7) and payments (B9).
+
+A25E) Cash Flow Snapshot (Bank + Cash)
+A25E) REGISTER NAME: Cash Flow Snapshot (Bank + Cash)
+PURPOSE: Simple cash/bank movement control (handwritten) for month-end.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Month ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Type (Bank/Cash) | Opening Balance | Receipts Total | Payments Total | Closing Balance | Source Pages (A11/A12) | Diff vs TB (if any) | Remarks |
+| -- | ---------------- | --------------- | -------------- | -------------- | --------------- | ---------------------- | ------------------- | ------- |
+|    | Bank             |                 |                |                |                 |                        |                     |         |
+|    | Cash             |                 |                |                |                 |                        |                     |         |
+
+TOTALS / CONTROL CHECKS:
+- Closing Bank/Cash here must match A11/A12 close AND TB bank/cash ledgers (A25B).
+- Any difference must be explained via BRS A27 / unposted items / pending entries.
+
+A25F) Month-End / Year-End Adjusting Entries Checklist (posting via A24)
+A25F) REGISTER NAME: Month-End / Year-End Adjusting Entries Checklist
+PURPOSE: Ensure all adjustments are passed through JV (A24) + posted (A25) before TB/FS.
+FREQUENCY: Monthly + Year-end
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Adjustment Area                                | Required(Y/N) | JV No/Date (A24) | Debit Ledger | Credit Ledger | Amount | Evidence File Code (A29) | Done By | Checked By | Remarks |
+| -- | ---------------------------------------------- | ------------- | ---------------- | ------------ | ------------- | ------ | ------------------------ | ------- | ---------- | ------- |
+|    | Depreciation (ref C16)                         |               |                  |              |               |        |                          |         |            |         |
+|    | Closing stock valuation (ref A22)              |               |                  |              |               |        |                          |         |            |         |
+|    | Bank charges/interest not booked (ref A27/A11) |               |                  |              |               |        |                          |         |            |         |
+|    | Accruals/outstanding expenses                  |               |                  |              |               |        |                          |         |            |         |
+|    | Prepaid expenses                               |               |                  |              |               |        |                          |         |            |         |
+|    | GST reversals/reclaims (ref B4/B8)             |               |                  |              |               |        |                          |         |            |         |
+|    | TDS payable entries check (ref C2/C3)          |               |                  |              |               |        |                          |         |            |         |
+
+TOTALS / CONTROL CHECKS:
+- No TB/FS should be signed until all “Required=Y” items are posted via A24 and indexed in A25.
+
+A26) REGISTER NAME: Monthly MIS Summary Sheet (Handwritten)
+PURPOSE: One-page month snapshot for decisions + compliance readiness.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Month ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Sales (Taxable) | Output GST | Purchases (Taxable) | ITC Eligible | ITC Blocked | Gross Margin Est. | Total Expenses | Net Profit Est. | Cash In | Cash Out | Bank Bal (End) | Cash Bal (End) | Debtors (End) | Creditors (End) | Notes |
+| --- | ----- | --------------- | ---------- | ------------------- | ------------ | ----------- | ----------------- | -------------- | --------------- | ------- | -------- | -------------- | -------------- | ------------- | --------------- | ----- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Sales/Purchase/Expense totals must match registers
+- Output GST & ITC totals must reconcile with GST working (B2/B3/B4)
+
+A27) REGISTER NAME: Bank Reconciliation Statement (BRS) Sheet
+PURPOSE: Monthly reconciliation of bank book vs bank statement.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Month ____ | Bank A/c ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Bank A/c | Bank Statement Closing | Bank Book Closing | Add: Deposits in Transit | Less: Outstanding Payments | Less: Bank Charges/Interest (unbooked) | Add: Direct Credits (unbooked) | Adjusted Bank Balance | Adjusted Book Balance | Diff (should be 0) | Prepared By | Checked By | Remarks |
+| --- | ----- | -------- | ---------------------- | ----------------- | ------------------------ | -------------------------- | -------------------------------------- | ------------------------------ | --------------------- | --------------------- | ------------------ | ----------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Adjusted Bank Balance must equal Adjusted Book Balance
+- All recon items must be cleared next month or carried forward
+
+A28) REGISTER NAME: Document Numbering & Control SOP + Exception Log
+PURPOSE: Prevent missing/cancelled document gaps; strong audit trail.
+FREQUENCY: Daily/Monthly review
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Doc Type | Prefix/Series | Period | Start No | End No | Current No | Cancelled Nos | Missing No/Gaps | Reason/Action | Approved By | Remarks |
+| --- | -------- | ------------- | ------ | -------- | ------ | ---------- | ------------- | --------------- | ------------- | ----------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- No gaps: investigate & record Missing No/Gaps
+- Cancelled docs must be retained and referenced
+- Current No at month-end should match last issued doc
+
+A29) REGISTER NAME: Document Retention & Filing Index
+PURPOSE: Physical + digital filing map for fast retrieval.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | File Code | Period (Month/FY) | Docs Included | Physical File Label | Shelf/Box Location | Digital Folder Name | Retention Till (Fill) | Access/Owner | Remarks |
+| --- | --------- | ----------------- | ------------- | ------------------- | ------------------ | ------------------- | --------------------- | ------------ | ------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Every month must have a physical file code and digital folder
+- Retention Till to be filled as per your policy/CA advice
+
+A30) REGISTER NAME: Internal Controls Checklist Log
+PURPOSE: Evidence-based internal control tracking (Prepared/Checked).
+FREQUENCY: Daily/Weekly/Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Control Activity | Frequency | Evidence Register/Page | Prepared By | Checked By | Exceptions Noted | Corrective Action | Closure Date | Remarks |
+| --- | ---------------- | --------- | ---------------------- | ----------- | ---------- | ---------------- | ----------------- | ------------ | ------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Exceptions must have corrective action + closure date
+- Controls must cover cash, bank, stock, compliance, approvals
+
+A31) REGISTER NAME: Capital Introduced & Drawings Register
+PURPOSE: Track proprietor capital and drawings separately from business expenses.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Type(CAP/DRAW) | Mode(C/B/U) | Amount | Bank A/c (if any) | Purpose/Notes | Voucher Ref | Ledger Folio | Approved By | Remarks |
+| --- | ---- | -------------- | ----------- | ------ | ----------------- | ------------- | ----------- | ------------ | ----------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Must reconcile with owner capital account in ledger
+- Keep proofs (bank transfer/cash) filed
+
+B) GST COMPLIANCE REGISTERS
+
+B1) REGISTER NAME: GST Compliance Calendar (Template)
+PURPOSE: Single window to track all GST filings/payments/notices.
+FREQUENCY: Monthly/Quarterly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Return/Activity | Period | Due Date (Fill) | Actual Filing Date | ARN/Ack No | Tax Paid? (Y/N) | Challan/CIN | Prepared By | Checked By | Remarks |
+| --- | --------------- | ------ | --------------- | ------------------ | ---------- | --------------- | ----------- | ----------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Every filing must have ARN/Ack captured
+- Payment challan ref must be recorded if tax paid
+
+B2) REGISTER NAME: GSTR-1 Working Register (Invoice-level)
+PURPOSE: Invoice-wise working from Sales Register for GSTR-1.
+FREQUENCY: Monthly/Quarterly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Type(B2B/B2C/CN/DN/EXP/ADV/NIL) | Doc No | Doc Date | Recipient GSTIN/Name | POS State | HSN/SAC | Taxable Value | GST Rate% | CGST | SGST | IGST | Cess | Total | IRN (if any) | EWB (if any) | Included in GSTR-1?(Y/N) | Remarks |
+| --- | ------------------------------- | ------ | -------- | -------------------- | --------- | ------- | ------------- | --------- | ---- | ---- | ---- | ---- | ----- | ------------ | ------------ | ------------------------ | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Total Taxable + tax must match Sales Invoice Register (A6) after CN/DN
+- Mark Included in GSTR-1? only after finalization
+
+B3) REGISTER NAME: GSTR-3B Summary Working Sheet
+PURPOSE: Section-wise 3B computation from books + adjustments.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | 3B Table/Row | Description | Taxable Value | IGST | CGST | SGST | Cess | Source (Books/GSTR-1/Other) | Notes/Adjustments | Checked(Y/N) |
+| --- | ------------ | ----------- | ------------- | ---- | ---- | ---- | ---- | --------------------------- | ----------------- | ------------ |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Output tax should reconcile with GSTR-1 and books
+- ITC claimed must reconcile with ITC Ledger (B4) and 2B recon (B5)
+
+B4) REGISTER NAME: ITC Ledger (Invoice-wise)
+PURPOSE: Track eligible/blocked/RCM ITC with claim/reversal/reclaim.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Vendor | GSTIN | Inv No | Inv Date | Category(I/IS/CG) | Taxable Value | IGST | CGST | SGST | ITC Code(E/B/R/N) | Blocked Reason Code | 2B Available?(Y/N) | Claimed Month | Reversal Code (if any) | Re-claim Month | Balance Status(Hold/Claimed) | Remarks |
+| --- | ----- | ------ | ----- | ------ | -------- | ----------------- | ------------- | ---- | ---- | ---- | ----------------- | ------------------- | ------------------ | ------------- | ---------------------- | -------------- | ---------------------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Month ITC claimed total must equal 3B ITC claimed
+- Any reversal must carry Reversal Code + ref
+
+B5) REGISTER NAME: GSTR-2B vs Books Reconciliation Sheet
+PURPOSE: Identify missing/wrong ITC and vendor filing issues.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Vendor GSTIN | Inv No | Inv Date | GST Amt | In Books?(Y/N) | In 2B?(Y/N) | Mismatch Type Code | Reason | Action | Follow-up Date | Time-bar Risk(Y/N) | Status(O/P/C) | Remarks |
+| --- | ----- | ------------ | ------ | -------- | ------- | -------------- | ----------- | ------------------ | ------ | ------ | -------------- | ------------------ | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- All ITC claimed invoices must be In 2B (as per current law/practice—verify with CA)
+- Follow-up Date mandatory for mismatches
+
+B6) REGISTER NAME: GSTR-1 vs Books Reconciliation
+PURPOSE: Control totals: Sales/CN/DN/Exports vs books.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Metric | Books Total | GSTR-1 Total | Difference | Reason Code | Action/Correction | Done On | Checked By | Remarks |
+| --- | ----- | ------ | ----------- | ------------ | ---------- | ----------- | ----------------- | ------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Difference must be explained & corrected before filing
+
+B7) REGISTER NAME: 3B vs Books & Cash/Credit Ledger Reconciliation
+PURPOSE: Ensure tax payable/paid matches cash/credit utilization.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Metric | Books Total | 3B Total | Cash Ledger Paid | Credit Ledger Utilised | Difference | Reason/Adjustment | Ref Doc | Checked By | Remarks |
+| --- | ----- | ------ | ----------- | -------- | ---------------- | ---------------------- | ---------- | ----------------- | ------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Difference should be 0 after adjustments
+- Keep challan CIN references
+
+B8) REGISTER NAME: Blocked ITC Tracker (Sec 17(5) & others)
+PURPOSE: Central list of ineligible ITC with codes + treatment.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Invoice/Doc Ref | Vendor | Nature/Item | GST Amt | Blocked Code(B1..Bn) | Section/Rule Ref (Fill) | Treatment(Exp/Cap) | Reversal/Adj Ref | Remarks |
+| --- | ---- | --------------- | ------ | ----------- | ------- | -------------------- | ----------------------- | ------------------ | ---------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Blocked ITC should be expensed/capitalised as per accounting policy
+- Total Blocked GST should match Purchase/Expense registers ITC Code=B
+
+B9) REGISTER NAME: GST Payment Challan Register
+PURPOSE: Track all GST payments incl. interest/late fee.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Period | Tax Head(IGST/CGST/SGST/Cess/Int/Fee) | Amount | CPIN/Challan No | CIN/Payment Ref | Payment Date | Linked Return (GSTR-3B etc) | Bank/Mode | Remarks |
+| --- | ------ | ------------------------------------- | ------ | --------------- | --------------- | ------------ | --------------------------- | --------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Total payments must match cash ledger debits and 3B payment details
+
+B10) REGISTER NAME: GST Notice/Query Log
+PURPOSE: Track GST portal notices, replies, and status.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Notice Date | Notice Type | Reference No | Period | Summary | Due Date (Fill) | Reply Submitted On | Ack/ARN | Status(O/P/C) | Owner | Remarks |
+| --- | ----------- | ----------- | ------------ | ------ | ------- | --------------- | ------------------ | ------- | ------------- | ----- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- No notice should remain O (Open) past Due Date (Fill)
+
+B11) REGISTER NAME: E-way Bill / E-invoice / LUT Tracker (Optional)
+PURPOSE: Movement/e-invoice control + export/LUT references.
+FREQUENCY: Daily/As-needed
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Doc Type(Inv/DC) | Doc No | Date | IRN (if any) | EWB No (if any) | From | To | Vehicle No | Value | Validity Till | Cancelled?(Y/N) | Remarks |
+| --- | ---------------- | ------ | ---- | ------------ | --------------- | ---- | --- | ---------- | ----- | ------------- | --------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- If applicable, every dispatch should have EWB/IRN reference
+
+C) INCOME TAX COMPLIANCE REGISTERS
+
+C1) REGISTER NAME: Income Tax Compliance Calendar (Template)
+PURPOSE: Track TDS/TCS/Advance tax/ITR/Audit timelines.
+FREQUENCY: Monthly/Quarterly/Yearly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Activity | Period/FY | Due Date (Fill) | Actual Completion Date | Ack/Ref No | Payment Challan Ref | Prepared By | Checked By | Remarks |
+| --- | -------- | --------- | --------------- | ---------------------- | ---------- | ------------------- | ----------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- All filings/payments must have Ack/Ref captured
+
+C2) REGISTER NAME: TDS Deduction Register (Section-wise)
+PURPOSE: Invoice/payment-wise TDS deduction control.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date of Credit/Payment | Payee Name | PAN | Section Code | Nature of Payment | Base Amount | TDS Rate% | TDS Amount | Deducted On | Deposit Due (Fill) | Challan Ref | Quarter/Form | Certificate Ref | Remarks |
+| --- | ---------------------- | ---------- | --- | ------------ | ----------------- | ----------- | --------- | ---------- | ----------- | ------------------ | ----------- | ------------ | --------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Total TDS deducted in month must equal total deposited in challan register (C3) (after adjustments)
+- Section Code mandatory (use coding legend)
+
+C3) REGISTER NAME: TDS Payment/Challan Register
+PURPOSE: Track TDS deposits incl. interest/fee.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Challan Date | BSR Code | Challan Serial No | CIN (if any) | Period (Month) | Section-wise Ref | TDS Amount | Interest | Fee | Total Paid | Mode | Book Entry Ref | Remarks |
+| --- | ------------ | -------- | ----------------- | ------------ | -------------- | ---------------- | ---------- | -------- | --- | ---------- | ---- | -------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Challan total must match bank payment
+- Section-wise Ref should point to C2 entries
+
+C4) REGISTER NAME: TDS Return Filing Register
+PURPOSE: Quarterly return filing control with corrections log.
+FREQUENCY: Quarterly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | FY | Quarter | Form(24Q/26Q/27Q/27EQ) | Due Date (Fill) | Filing Date | Token/ACK No | No. of Records | Correction Filed?(Y/N) | Correction Token | Remarks |
+| --- | --- | ------- | ---------------------- | --------------- | ----------- | ------------ | -------------- | ---------------------- | ---------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Token/ACK No mandatory for every filed return
+- Correction tokens must be linked
+
+C5) REGISTER NAME: TCS Register
+PURPOSE: Track TCS collection and deposit/return mapping.
+FREQUENCY: Monthly/Quarterly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Customer | PAN | TCS Category Code | Nature | Amount Collected | TCS Rate% | TCS Amount | Deposit Due (Fill) | Challan Ref | Return Quarter | Remarks |
+| --- | ---- | -------- | --- | ----------------- | ------ | ---------------- | --------- | ---------- | ------------------ | ----------- | -------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- TCS collected must reconcile with receipts/sales where applicable
+
+C6) REGISTER NAME: Form 26AS Reconciliation Sheet
+PURPOSE: Reconcile 26AS with books for ITR correctness.
+FREQUENCY: Quarterly/Yearly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | FY | Entry Type(TDS/TCS/Tax Paid) | Deductor/Collector | TAN | Section | Amount | Tax | In Books?(Y/N) | Mismatch Reason | Action Taken | Status(O/P/C) | Remarks |
+| --- | --- | ---------------------------- | ------------------ | --- | ------- | ------ | --- | -------------- | --------------- | ------------ | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- All mismatches must have action + closure status
+
+C7) REGISTER NAME: AIS/TIS Notes & Action Register
+PURPOSE: Track AIS/TIS differences and supporting proofs.
+FREQUENCY: Quarterly/Yearly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | FY | AIS/TIS Item | Value as per AIS/TIS | Value in Books | Difference | Reason | Action/Proof | Closure Date | Status(O/P/C) | Remarks |
+| --- | --- | ------------ | -------------------- | -------------- | ---------- | ------ | ------------ | ------------ | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Close differences before ITR finalization
+
+C8) REGISTER NAME: Advance Tax Computation & Payment Tracker
+PURPOSE: Quarterly advance tax working + payment control.
+FREQUENCY: Quarterly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | FY | Installment(Q1/Q2/Q3/Q4) | Projected Profit | Estimated Tax | Tax Paid Till Date | This Installment Amount | Due Date (Fill) | Paid Date | Challan No/Ref | Balance Tax | Remarks |
+| --- | --- | ------------------------ | ---------------- | ------------- | ------------------ | ----------------------- | --------------- | --------- | -------------- | ----------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Paid date + challan ref must be captured
+
+C9) REGISTER NAME: Salary Register - Employee Master
+PURPOSE: Employee static details for payroll/TDS/PF/ESI.
+FREQUENCY: As-needed (update)
+HEADER FIELDS (page top): As on Date ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Emp ID | Employee Name | PAN | Designation | DOJ | Bank/UPI | PF UAN (if any) | ESI IP No (if any) | Salary Type(Fixed/Hourly) | TDS Applicable?(Y/N) | Status(O/P/C) | Remarks |
+| --- | ------ | ------------- | --- | ----------- | --- | -------- | --------------- | ------------------ | ------------------------- | -------------------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- PAN/UAN/ESI must be captured where applicable
+
+C10) REGISTER NAME: Salary Register - Monthly Salary Sheet
+PURPOSE: Monthly payroll computation + payment control.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Month ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Emp ID | Employee Name | Basic | HRA | Other | Gross | PF Emp | ESI Emp | PT | TDS | Other Ded. | Net Pay | Mode(C/B/U) | Pay Date | Remarks |
+| --- | ----- | ------ | ------------- | ----- | --- | ----- | ----- | ------ | ------- | --- | --- | ---------- | ------- | ----------- | -------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Total net pay must match payments made
+- PF/ESI/PT/TDS totals must reconcile with respective registers
+
+C11) REGISTER NAME: PF Register
+PURPOSE: PF contribution tracking and challan control.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Emp ID | PF Wages | PF Emp | PF Employer | EPS | EDLI/Admin | Challan No | Paid Date | UAN | Remarks |
+| --- | ----- | ------ | -------- | ------ | ----------- | --- | ---------- | ---------- | --------- | --- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Challan no + paid date mandatory
+
+C12) REGISTER NAME: ESI Register
+PURPOSE: ESI contribution tracking and challan control.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Month | Emp ID | ESI Wages | ESI Emp | ESI Employer | Total | Challan No | Paid Date | ESI IP No | Remarks |
+| --- | ----- | ------ | --------- | ------- | ------------ | ----- | ---------- | --------- | --------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Challan no + paid date mandatory
+
+C13) REGISTER NAME: Professional Tax Register (State-wise placeholder)
+PURPOSE: Track PT liability/payment by state rules.
+FREQUENCY: Monthly
+HEADER FIELDS (page top): FY ____ | State ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | State | Month | Emp ID | Salary Slab (Fill) | PT Amount | Due Date (Fill) | Paid Date | Challan/Ref | Remarks |
+| --- | ----- | ----- | ------ | ------------------ | --------- | --------------- | --------- | ----------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Due Date (Fill) must be as per your state rules
+
+C14) REGISTER NAME: Books of Accounts Index & Page Control (Sec 44AA)
+PURPOSE: Maintain books index and page control for audit trail.
+FREQUENCY: Yearly (setup) + Monthly review
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Book Name | Book Code | FY | Start Page No | End Page No | Total Pages | Opening Signed?(Y/N) | Closing Signed?(Y/N) | Custody Location | Remarks |
+| --- | --------- | --------- | --- | ------------- | ----------- | ----------- | -------------------- | -------------------- | ---------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- No missing pages; each book opening/closing signed
+C14) Books of Accounts Index & Page Control (Sec 44AA) में FY setup करते समय ये book entries add करें (Book Name / Book Code के रूप में):
+Chart of Accounts Master → COA (A25A)
+Trial Balance Book → TB (A25B)
+P&L Statements Book → PL (A25C)
+Balance Sheet Book → BS (A25D)
+Cash Flow Snapshot Book → CF (A25E)
+Other Law Compliance Book → OL-CAL (D2)
+Other Law Notices Book → OL-NOT (D4)
+Other Law Registers Index → OL-REG (D3)
+
+C15) REGISTER NAME: Ledger Account Template (Posting)
+PURPOSE: Handwritten ledger format for each account.
+FREQUENCY: Daily/Weekly posting
+HEADER FIELDS (page top): Ledger A/c Name ____ | FY ____ | Page ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Date | Particulars | Voucher/Doc Ref | Debit | Credit | Running Balance | Contra Folio | Narration | Checked(Y/N) |
+| --- | ---- | ----------- | --------------- | ----- | ------ | --------------- | ------------ | --------- | ------------ |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Running balance must match posting totals from index (A25)
+
+C16) REGISTER NAME: Fixed Asset Register + Depreciation Computation (Block-wise)
+PURPOSE: Asset control + tax depreciation summary.
+FREQUENCY: Monthly/Yearly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Asset ID | Asset Name | Block | Rate% | Put-to-use Date | Opening WDV | Additions | Deletions | Total | Depreciation | Closing WDV | Invoice/Doc Ref | Remarks |
+| --- | -------- | ---------- | ----- | ----- | --------------- | ----------- | --------- | --------- | ----- | ------------ | ----------- | --------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Closing WDV used for ITR
+- Additions must tie to purchase invoices & payments
+
+C17) REGISTER NAME: Presumptive Taxation Worksheet (44AD/44ADA/44AE)
+PURPOSE: If you opt presumptive, capture receipts + deemed income.
+FREQUENCY: Quarterly/Yearly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | FY | Scheme(44AD/44ADA/44AE) | Turnover/Receipts | Presumptive Rate% | Deemed Income | Actual Profit (opt) | Advance Tax Paid | Balance Payable | Notes |
+| --- | --- | ----------------------- | ----------------- | ----------------- | ------------- | ------------------- | ---------------- | --------------- | ----- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Scheme selection must match ITR filed (verify with CA)
+
+C18) REGISTER NAME: ITR Filing Data Pack Checklist
+PURPOSE: One index of all documents needed for ITR.
+FREQUENCY: Yearly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Document/Info | Period/FY | Source | Received?(Y/N) | Physical File Code | Digital Folder | Verified?(Y/N) | Notes | Owner |
+| --- | ------------- | --------- | ------ | -------------- | ------------------ | -------------- | -------------- | ----- | ----- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- No document should be marked Received=Y without verifying correctness
+
+C19) REGISTER NAME: Tax Audit Support File Index (If applicable)
+PURPOSE: Index of all audit-ready files, reconciliations, samples.
+FREQUENCY: Yearly
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | File/Folder Code | Area/Topic | Contents | Period | Prepared By | Reviewed By | Location | Status(O/P/C) | Remarks |
+| --- | ---------------- | ---------- | -------- | ------ | ----------- | ----------- | -------- | ------------- | ------- |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- Keep cross references to registers and reconciliations
+
+C20) REGISTER NAME: Income Tax Notice/Communication Log
+PURPOSE: Track income tax notices/communications and replies.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+TABLE COLUMNS (ASCII):
+```
+| Sl | Comm Date | Authority/Portal | Reference No | FY/AY | Subject | Due Date (Fill) | Response Submitted On | Ack/Ref | Status(O/P/C) | Owner | Remarks |
+| --- | --------- | ---------------- | ------------ | ----- | ------- | --------------- | --------------------- | ------- | ------------- | ----- | ------- |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+```
+TOTALS / CONTROL CHECKS:
+- No notice should remain Open past Due Date (Fill)
+
+PATCH 2 — “Any Other Law” Compliance (Configurable framework)
+D) OTHER LAW / STATUTORY COMPLIANCE (CONFIGURABLE)
+D1) Applicability + Registrations/Licenses Master
+D1) REGISTER NAME: Other Law Applicability + Registrations/Licenses Master
+PURPOSE: Capture “any other law” applicability + registration details + renewals.
+FREQUENCY: Yearly review + update on change
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Law/Registration/License        | Authority/Portal | Applicability Criteria/Threshold | Applicable(Y/N) | Regn/License No | State/City | Renewal/Filing Frequency | Next Due Date | Owner | Evidence File Code (A29) | Remarks |
+| -- | ------------------------------- | ---------------- | -------------------------------- | --------------- | --------------- | ---------- | ------------------------ | ------------- | ----- | ------------------------ | ------- |
+|    | Shops & Establishment (example) |                  |                                  |                 |                 |            |                          |               |       |                          |         |
+|    | Trade License (example)         |                  |                                  |                 |                 |            |                          |               |       |                          |         |
+|    | FSSAI (example, if applicable)  |                  |                                  |                 |                 |            |                          |               |       |                          |         |
+|    | IEC/MSME/Udyam (example)        |                  |                                  |                 |                 |            |                          |               |       |                          |         |
+
+TOTALS / CONTROL CHECKS:
+- “Applicable=Y” items must appear in D2 calendar with due dates.
+- Evidence File Code must exist in A29 for every active license/renewal/filing.
+
+D2) Other Law Compliance Calendar (filings/renewals/payments)
+D2) REGISTER NAME: Other Law Compliance Calendar (Filings/Renewals/Payments)
+PURPOSE: One window to track all non-GST/non-IncomeTax compliance actions.
+FREQUENCY: Monthly/Quarterly/Yearly
+HEADER FIELDS (page top): FY ____ | Period ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Law/Area | Activity (Return/Renewal/Payment/Display/Record) | Period | Due Date (Fill) | Completed On | Ack/Ref No | Payment/Challan Ref | Evidence File Code (A29) | Status(O/P/C) | Owner | Checked By | Remarks |
+| -- | -------- | ------------------------------------------------ | ------ | --------------- | ------------ | ---------- | ------------------- | ------------------------ | ------------- | ----- | ---------- | ------- |
+|    |          |                                                  |        |                 |              |            |                     |                          |               |       |            |         |
+
+TOTALS / CONTROL CHECKS:
+- No item should remain Status=O past Due Date.
+- If payment is required, challan ref must be recorded and also appear in A9/A11/A12 books.
+
+D3) REGISTER NAME: Statutory Registers / Records Index (Other Laws)
+PURPOSE: If any law requires registers/records, track existence + page control.
+FREQUENCY: Yearly setup + Quarterly review
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Law/Area | Mandatory Register/Record | Frequency | Book Code | Start Page | End Page | Maintained(Y/N) | Checked By | Remarks |
+| -- | -------- | ------------------------- | --------- | --------- | ---------- | -------- | --------------- | ---------- | ------- |
+|    |          |                           |           |           |            |          |                 |            |         |
+
+
+#### D4) Other Law Notice/Inspection/Communication Log
+```text
+D4) REGISTER NAME: Other Law Notice/Inspection/Communication Log
+PURPOSE: Track any non-GST/non-IncomeTax notices, inspections, replies.
+FREQUENCY: As-needed
+HEADER FIELDS (page top): FY ____ | Prepared ____ | Checked ____
+
+TABLE COLUMNS (ASCII):
+| Sl | Comm Date | Authority | Law/Area | Reference No | Subject | Due Date (Fill) | Response Submitted On | Ack/Ref | Status(O/P/C) | Owner | Remarks |
+| -- | --------- | --------- | -------- | ------------ | ------- | --------------- | --------------------- | ------- | ------------- | ----- | ------- |
+|    |           |           |          |              |         |                 |                       |         |               |       |         |
+
+TOTALS / CONTROL CHECKS:
+- No notice should remain Open past Due Date.
+- Evidence (reply + acknowledgement) must be filed and indexed in A29.
+
+
+6) CODING LEGENDS (Edit as per your business)
+
+A) ITC CODE (use everywhere in A7/A8/B4)
+- E = Eligible ITC
+- B = Blocked/Ineligible ITC (Sec 17(5) etc)
+- R = Reverse/RCM (tax to be paid under RCM / ITC claim after payment, as applicable)
+- N = Non-GST / No ITC (bill of supply / exempt / non-GST)
+
+B) PAYMENT MODE
+- C = Cash
+- B = Bank (NEFT/RTGS/IMPS/Cheque)
+- U = UPI (incl. wallet/UPI QR)
+
+C) STATUS (use for invoices/outstandings/filings)
+- O = Open
+- P = Partial
+- C = Closed
+
+D) SUPPLY TYPE (GST)
+- L = Intra-state (Local)
+- I = Inter-state
+- E = Export
+- SEZ = SEZ supply (if applicable)
+
+E) PURCHASE CATEGORY (ITC classification)
+- I  = Inputs
+- IS = Input Services
+- CG = Capital Goods
+
+F) NATURE (Expense)
+- D = Direct
+- I = Indirect
+
+G) BLOCKED ITC REASON CODES (edit/expand; keep consistent)
+- B1 = Motor vehicle / conveyance (17(5)(a)) (exceptions apply)
+- B2 = Food & beverages / outdoor catering / beauty / health services etc (17(5)(b)(i))
+- B3 = Club / health & fitness membership (17(5)(b)(ii))
+- B4 = Rent-a-cab / life & health insurance / travel benefits (17(5)(b)(iii)) (exceptions apply)
+- B5 = Works contract / construction for immovable property (17(5)(c)/(d)) (exceptions apply)
+- B6 = Personal consumption / non-business use (17(5)(g))
+- B7 = Lost/stolen/destroyed/written off/gift/free samples (17(5)(h))
+- B8 = Composition supplier invoice / non-tax invoice (no ITC)
+- B9 = Time-bar / other legal ineligibility (verify with CA)
+- B10 = Rule 42/43 reversal category (common pool / exempt) (track via reversal codes below)
+
+H) ITC REVERSAL / ADJUSTMENT CODES (for B4/B8/A24)
+- R1 = Rule 42 (exempt/non-business proportionate reversal)
+- R2 = Rule 43 (capital goods reversal)
+- R3 = 180-days payment not made reversal (vendor not paid)
+- R4 = Credit note reversal (ITC reduced due to CN)
+- R5 = Others (specify)
+
+I) GST RECON MISMATCH TYPE CODES (B5)
+- M1 = In books but not in 2B
+- M2 = In 2B but not in books
+- M3 = GSTIN wrong/mismatch
+- M4 = Invoice no/date mismatch
+- M5 = Tax amount/rate mismatch
+- M6 = Duplicate/Cancelled invoice
+- M7 = Time-bar risk / late availability
+- M8 = RCM/Import/Other special case (specify)
+
+J) STOCK ADJUSTMENT REASON CODES (A23)
+- S1 = Physical count difference
+- S2 = Damage/Wastage
+- S3 = Expired/Obsolete
+- S4 = Sample/Free issue
+- S5 = Transfer/Other (specify)
+
+K) TDS SECTION CODES (minimum 15; edit)
+- 192  Salary
+- 193  Interest on securities
+- 194A Interest (other than securities)
+- 194C Contractor
+- 194H Commission/Brokerage
+- 194I Rent
+- 194J Professional/Technical
+- 194Q Purchase of goods (buyer)
+- 194R Benefit/Perquisite
+- 194S Virtual digital assets
+- 195  Non-resident payments
+- 194IA Transfer of immovable property
+- 194IB Rent by individual/HUF (not audit)
+- 194M Payment by individual/HUF to resident contractor/professional
+- 194O E-commerce participant payments
+
+L) TCS CATEGORY CODES (8; edit)
+- T1 = 206C(1)   Specified goods (scrap/others as applicable)
+- T2 = 206C(1C)  Parking lot/toll plaza/mine/quarry (if applicable)
+- T3 = 206C(1F)  Motor vehicle sale (high value) (if applicable)
+- T4 = 206C(1G)  LRS/Foreign remittance/Overseas tour package (if applicable)
+- T5 = 206C(1H)  Sale of goods (turnover based) (if applicable)
+- T6 = 206C(1D)  Timber/forest produce (if applicable)
+- T7 = 206C(1)   Minerals (if applicable)
+- T8 = Others (specify)
+
+Note: Apply sections/categories only if legally applicable to you; verify thresholds & rules with CA.
+
+
+7) SAMPLE: 1 FILLED EXAMPLE ROW (Critical Registers)
+
+A6) SALES INVOICE REGISTER — Example (1 row)
+| Sl | Inv Date | Invoice No | Customer | Customer GSTIN | POS State | Supply Type(L/I/E/SEZ) | GST Type(CGST+SGST/IGST) | HSN/SAC | Taxable Value | GST Rate% | CGST | SGST | IGST | Cess | Round-off | Invoice Total | Payment Mode(C/B/U) | Payment Status(O/P/C) | Receipt Ref | IRN/E-inv (if any) | EWB No (if any) | Ledger Folio | Remarks |
+| 1 | 05/04/2025 | SI/25-26/001 | ABC Traders | 27ABCDE1234F1Z5 | MH | L | CGST+SGST | 9983 | 10000 | 18 | 900 | 900 | 0 | 0 | 0 | 11800 | U | C | UPI-UTR123 |  |  | SL-12 | Paid same day |
+
+A7) PURCHASE INVOICE REGISTER — Example (1 row)
+| Sl | Inv Recv Date | Vendor | Vendor GSTIN | Vendor Inv No | Vendor Inv Date | POS State | RCM? (Y/N) | Category(I/IS/CG) | Taxable Value | GST Rate% | CGST | SGST | IGST | Total | ITC Code(E/B/R/N) | Blocked Reason Code | ITC Claim Month | 2B Available?(Y/N) | Cost Center/Project | Payment Status(O/P/C) | Payment Ref | Ledger Folio | Remarks |
+| 1 | 06/04/2025 | XYZ Supplies | 27PQRSX5678L1Z2 | INV-458 | 05/04/2025 | MH | N | I | 5000 | 18 | 450 | 450 | 0 | 5900 | E |  | Apr-2025 | Y | CC-OPS | O |  | PU-07 | To be paid |
+
+B4) ITC LEDGER — Example (1 row)
+| Sl | Month | Vendor | GSTIN | Inv No | Inv Date | Category(I/IS/CG) | Taxable Value | IGST | CGST | SGST | ITC Code(E/B/R/N) | Blocked Reason Code | 2B Available?(Y/N) | Claimed Month | Reversal Code (if any) | Re-claim Month | Balance Status(Hold/Claimed) | Remarks |
+| 1 | Apr-2025 | XYZ Supplies | 27PQRSX5678L1Z2 | INV-458 | 05/04/2025 | I | 5000 | 0 | 450 | 450 | E |  | Y | Apr-2025 |  |  | Claimed | Matched in 2B |
+
+C2) TDS DEDUCTION REGISTER — Example (1 row)
+| Sl | Date of Credit/Payment | Payee Name | PAN | Section Code | Nature of Payment | Base Amount | TDS Rate% | TDS Amount | Deducted On | Deposit Due (Fill) | Challan Ref | Quarter/Form | Certificate Ref | Remarks |
+| 1 | 10/04/2025 | MNO Services | ABCDE1234F | 194C | Contract work | 200000 | 1 | 2000 | 10/04/2025 |  | TDS-APR-01 | Q1/26Q |  | Deducted at payment |
+
+MASTER CHECKLIST + YEAR-END CLOSING CHECKLIST (100% Coverage)
+
+MASTER CHECKLIST (Run continuously)
+[DAILY]
+[ ] A6 Sales invoices issued & logged
+[ ] A7 Purchases recorded with ITC code + RCM flag
+[ ] A8 Expenses recorded with cost center + ITC code
+[ ] A9 Payments recorded; TDS flagged where applicable (C2)
+[ ] A10 Receipts recorded; outstanding updated (A14)
+[ ] A11/A12 Bank/Cash books updated + cash count signed
+[ ] A22 Stock movement updated (if goods)
+[ ] A28 Numbering gap check; cancellations retained
+[ ] A29 Filing done (physical + digital)
+
+[WEEKLY]
+[ ] A14/A15 Ageing updated + follow-ups
+[ ] Stock cycle count + variances logged (A23)
+[ ] Vendor GST/2B issues list updated (B5)
+[ ] Control log signed (A30)
+
+[MONTHLY]
+[ ] BRS done (A27)
+[ ] GSTR-1 working + filing recorded (B2/B1)
+[ ] 2B vs books reconciliation completed (B5)
+[ ] ITC ledger updated (B4) + blocked ITC tracker updated (B8)
+[ ] 3B working + payment + reconciliation (B3/B9/B7)
+[ ] TDS month deduction + deposit (C2/C3) (if applicable)
+[ ] Salary/PF/ESI/PT registers updated (C10-C13) (if applicable)
+[ ] MIS summary prepared (A26)
+[ ] Month file closed + indexed (A29)
+[ ] A25B Trial Balance prepared + signed
+[ ] A25C P&L prepared + signed
+[ ] A25D Balance Sheet prepared + signed
+[ ] D2 Other-law compliance calendar review/update
+
+
+[QUARTERLY]
+[ ] TDS returns filed (C4) (if applicable)
+[ ] Advance tax tracker updated (C8) (if applicable)
+
+[YEARLY]
+[ ] Stock physical count done + valuation signed
+[ ] Fixed asset register + depreciation final (C16)
+[ ] 26AS + AIS/TIS reconciliation closed (C6/C7)
+[ ] GST annual reconciliation placeholder completed (Books vs returns vs 2B) (B2/B3/B4/B5)
+[ ] ITR data pack checklist completed (C18)
+[ ] If audit: audit index ready (C19)
+[ ] A25B/A25C/A25D Year-end financial statements finalized (TB/P&L/BS)
+[ ] D1/D3 Other-law applicability + statutory registers review completed
+
+
+YEAR-END CLOSING CHECKLIST (Fill dates)
+| Sl | Closing Task | Due Date (Fill) | Completed On | Evidence (Register/Page) | Prepared By | Checked By | Remarks |
+| --- | ----------- | --------------- | ------------ | ------------------------- | ----------- | ---------- | ------- |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+
+DISCLAIMER: “टेम्पलेट जनरल है; अंतिम कम्प्लायंस हेतु CA/Tax professional से verify करें।”

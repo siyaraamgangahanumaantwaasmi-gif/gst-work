@@ -1,0 +1,185 @@
+आप एक Senior Full‑Stack Architect हैं (PHP 8.2 + MariaDB 11.4 + Apache 2.4 Debian). इस नए chat में आपका लक्ष्य “operations‑first” web app का **पूरी तरह runnable end‑to‑end vertical slice** देना है—लेकिन एक अतिरिक्त deployment constraint के साथ:
+
+✅ **मैं file manager में 50+ files manually बनाना नहीं चाहता।**
+➡️ इसलिए आपको पूरे project के सभी files (app/*) का content **DATABASE में bundle करके** देना है, ताकि मैं phpMyAdmin से SQL import करूँ और server पर सिर्फ minimum public files डालकर app चला सकूँ।
+
+---
+
+# INPUTS (आपको ये files दिए गए हैं / user attach करेगा)
+1) `Handwritten_Business_Operations_GST_IT_Compliance_Register_System.txt`
+   - यही canonical “operations + registers” spec है: A2 (Customer Master), A4 (Item/Service Master), A6 (Sales Invoice Register), coding legends (Status O/P/C, Payment mode C/B/U, Supply type L/I/E/SEZ, ITC codes E/B/R/N, आदि)।
+   - UI labels, DB fields, validations इन्हीं mappings/codes के अनुसार रखें।
+2) (Optional reference) `answered1_doubt.md` = पिछला partial output; इसे केवल reference मानें, fresh clean code regenerate करें।
+
+---
+
+# FIXED STACK / ENV (Non‑negotiable)
+- PHP 8.2 (PDO required; mysqli optional; sodium available)
+- MariaDB 11.4, utf8mb4
+- Apache 2.4 Debian
+- DB localhost UNIX socket (SSL नहीं)
+- phpMyAdmin available
+
+---
+
+# HARD CONSTRAINTS (Non‑negotiable)
+1) Web entry केवल **public/main_entry.php**
+   - main_entry.php में ONLY:
+     - DB creds/config
+     - session init + login state check
+     - router/dispatcher bootstrap
+     - (इस prompt में allow) “DB bundle extractor/loader” सिर्फ infrastructure के रूप में (कोई domain/business rules नहीं)
+2) Strict 3 DB separation (आप नाम suggest करो ,IF NEEDED NEW ?):
+   - UI_DB: users/roles/sessions/permissions + tenant registry + app settings + (NEW) app_files bundle storage
+   - MASTER_DB: parties/items/HSN-SAC + GST rate profile/history + COA basics
+   - TXN_DB: sales invoice + lines + stock moves + outstanding + GL postings
+3) “Invoice lock / period lock” rule पूरी तरह हटाएँ; past FY edit allowed
+4) Heavy audit/activity log नहीं; minimal fields:
+   - created_at, updated_at, created_by(optional), lock_version, status, is_deleted
+   - Old FY edits के लिए optional: revision_no, edit_reason (audit module नहीं)
+
+---
+
+# PRIMARY GOAL (Tiny + Complete runnable slice)
+A) Auth + Tenant (minimal):
+- Login (password_hash/verify, PDO prepared statements)
+- UI_DB में tenants table; single-tenant default insert
+- UI_DB setting: app_mode = NORMAL | BACKFILL (UI में switch)
+
+B) Masters (Handwritten registers mapping आधारित)
+- Party Master (Customer) CRUD (A2 mapping)
+- Item/Service Master CRUD (A4 mapping)
+- HSN/SAC + GST rate history screens (minimal but correct):
+  - gst_rate_profile immutable (update/delete blocked)
+  - hsn_gst_rate_history effective dating; overlap prevention validation
+
+C) Sales Invoice Module (A6 mapping + minimal accounting):
+- Create / Edit / View / List (register-style list)
+- Multi-line, multi-HSN, multi-rate per invoice
+- GST logic:
+  - invoice_date के अनुसार rate resolve (hsn effective history से)
+  - invoice_line में snapshot store: applied_rate_profile_id + applied_rate_percent + computed tax amounts
+  - intra/inter supply: CGST+SGST vs IGST (Supply Type L/I/E/SEZ per spec)
+- Outstanding:
+  - invoice बनते ही receivable open item बने
+  - list page पर unpaid/partial/paid status दिखे (O/P/C)
+- Minimal GL posting (double-entry, correct but minimal):
+  - Dr Debtors Control
+  - Cr Sales/Revenue
+  - Cr Output CGST/SGST/IGST ledgers
+  - Invoice edit पर posting regenerate (no lock), safeguards: revision_no + lock_version optimistic locking
+- Optional but preferred: stock_move entries for stockable items (qty_out)
+
+---
+
+# NEW DEPLOYMENT REQUIREMENT (CRITICAL)
+## “FILES INTO DATABASE BUNDLE” (No file-manager copying)
+आपको app के सभी non-public files को UI_DB के अंदर store करना है।
+
+1) UI_DB में table बनाइए: `app_files`
+   - columns (suggested):
+     - file_path VARCHAR(255) PRIMARY KEY
+     - content_base64 LONGTEXT NOT NULL
+     - sha256 CHAR(64) NOT NULL
+     - updated_at DATETIME NOT NULL
+2) एक SQL script दें: `sql/05_app_files_bundle.sql`
+   - इसमें `INSERT/REPLACE INTO app_files (...) VALUES (...)` के जरिए:
+     - `app/bootstrap.php`
+     - `app/routes.php`
+     - `app/controllers/*`
+     - `app/services/*`
+     - `app/lib/*`
+     - `app/views/*`
+     - `README_SETUP.md` (optional store भी कर सकते हैं)
+   - IMPORTANT: file content को base64 में store करें ताकि SQL quoting issues न हों।
+3) `public/main_entry.php` में minimal “bundle loader”:
+   - DB connect (PDO)
+   - `app_files` से required files निकालकर server पर filesystem में write करें:
+     - target root: project_root/app/...
+     - ensure directories auto-create हों
+   - extraction idempotent हो:
+     - sha256 compare; same हो तो overwrite न करे
+   - extraction के बाद normal flow: `require ../app/bootstrap.php` और router dispatch
+   - NOTE: यह loader सिर्फ infrastructure है, domain logic नहीं
+4) Goal: deployment में मैं सिर्फ ये डालूँ:
+   - `public/main_entry.php`
+   - `public/.htaccess`
+   - और phpMyAdmin से SQL import करूँ
+   - उसके बाद app first-run पर files extract करके चल जाए
+
+---
+
+# CODING RULES
+- No frameworks; plain PHP
+- PDO prepared statements everywhere
+- Basic CSRF for POST
+- Input validation:
+  - date format
+  - numeric amounts/qty
+  - GSTIN length 15 (यदि present)
+  - state_code (2 chars)
+  - payment mode C/B/U
+  - status O/P/C जहाँ applicable
+- Concurrency: lock_version optimistic locking on invoice update
+- Soft delete via is_deleted (जहाँ practical)
+- Cross-DB FK ना लगाएँ; reference by ids/codes; integrity via app-layer + indexes
+
+---
+
+# UI MINIMUM
+- Simple HTML (no heavy CSS). 1 navbar.
+- Pages:
+  - /login
+  - /settings (mode NORMAL/BACKFILL)
+  - /masters/party
+  - /masters/item
+  - /masters/hsn-rate-history
+  - /sales/invoice/new
+  - /sales/invoice/list
+  - /sales/invoice/edit?id=
+  - /sales/invoice/view?id=
+
+---
+
+# OUTPUT FORMAT (STRICT — पालन अनिवार्य)
+आपका output MUST contain:
+
+1) “ASSUMPTIONS” (max 8 bullets, Hindi)
+2) “FILE TREE” (project root से)
+   - public/ + app/ + sql/
+3) हर file का **पूरा content** code blocks में:
+   - path as heading (उदा: `// file: public/main_entry.php`)
+   - IMPORTANT: इस बार कोई “size limit” वाला partial output नहीं।
+     - अगर output बड़ा हो, तो **खुद multiple parts में** बाँटें:
+       - PART 1/4, PART 2/4 ...
+       - लेकिन हर part में complete files दें (truncate नहीं)
+4) SQL scripts (minimum 5):
+   - `sql/01_ui_db.sql`
+   - `sql/02_master_db.sql`
+   - `sql/03_txn_db.sql`
+   - `sql/04_seed.sql` (default tenant + admin user + sample COA + sample HSN/rate + sample party/item)
+   - `sql/05_app_files_bundle.sql` (NEW: app_files table + inserts for all non-public files)
+5) `README_SETUP.md`:
+   - Apache docroot सुझाव (public/)
+   - .htaccess rewrite to main_entry.php
+   - php.ini/session perms notes (minimal)
+   - Step-by-step setup:
+     - phpMyAdmin import order (01→02→03→04→05)
+     - file upload: public/main_entry.php + public/.htaccess
+     - first-run extraction expected behavior
+6) “MANUAL TEST CHECKLIST” (testable, 15–25 items)
+
+---
+
+# IMPORTANT BUSINESS MAPPING (Handwritten spec से align करें)
+- A2 Customer Master columns (कम से कम):
+  - Customer Code, Customer Name, GSTIN, State, Address, Contact, Email, Payment Terms Days, Credit Limit, TCS? (Y/N), Status(O/P/C), Remarks
+- A4 Item/Service Master (कम से कम):
+  - Item Code, Description, HSN/SAC, GST Rate (via profile/history), Unit, Sale Price, Purchase Price(optional), Reorder Level(optional), Stock Type(optional), ITC Category(optional), Remarks
+- A6 Sales Invoice register style list में show करें:
+  - Inv Date, Invoice No, Customer, GSTIN, POS State, Supply Type(L/I/E/SEZ), GST Type, Taxable, CGST/SGST/IGST, Round-off, Total, Payment Mode(C/B/U), Payment Status(O/P/C), Receipt Ref(optional), IRN/EWB(optional), Remarks
+
+---
+
+अब ऊपर के अनुसार पूरा runnable component generate करो।
+Theory/blueprint मत लिखो—सिर्फ practical deliverables (files + SQL + README + checklist)।
