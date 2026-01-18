@@ -1,40 +1,16 @@
-// file: main_entry.php
 <?php
 declare(strict_types=1);
 
 /*
- * Single entry point for DB-driven micro-cellular UI.
- * Only responsibilities:
- *  - config
- *  - session init
+ * App bootstrap extracted from DB bundle.
+ * Responsibilities:
+ *  - session init (if needed)
  *  - PDO connections to 3 databases
  *  - router (path -> page_name)
  *  - page composition loader
  *  - code cell executor (PHP/HTML/CSS/JS)
  *  - maintenance endpoint to re-hash code_cells (infrastructure)
  */
-
-// =========================
-// CONFIG (edit here)
-// =========================
-const APP_DEBUG = false; // true for verbose errors
-
-// IMPORTANT: set a long random token before using maintenance endpoints.
-const MAINT_TOKEN = "hash_RESET_TOKEN";
-
-// Database credentials
-const DB_USER = "gstr1";
-const DB_PASS = "gstLOCAL*123";
-
-// Prefer unix socket on Debian; fallback to host/port if socket file missing.
-const DB_SOCKET = "/var/run/mysqld/mysqld.sock";
-const DB_HOST = "127.0.0.1";
-const DB_PORT = 3306;
-
-// DB names (as per your server): ui_db, master_db, txn_db
-const UI_DB_NAME = "ui_db";
-const MASTER_DB_NAME = "master_db";
-const TXN_DB_NAME = "txn_db";
 
 // =========================
 // Runtime settings
@@ -601,4 +577,3 @@ try {
         echo "Runtime error.";
     }
 }
-
